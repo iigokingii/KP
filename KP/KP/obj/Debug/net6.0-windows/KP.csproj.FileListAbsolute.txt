@@ -77,3 +77,9 @@ D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Main\MainWindow.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Main\MainWindow.baml
 D:\2k2s\KP\KP\KP\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 D:\2k2s\KP\KP\KP\bin\Debug\net6.0-windows\FontAwesome.WPF.dll
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Registration\RegistrationView.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Registration\RegistrationView.baml
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\CatalogView.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\HomeView.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\CatalogView.baml
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\HomeView.baml

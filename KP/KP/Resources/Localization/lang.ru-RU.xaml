@@ -5,7 +5,10 @@
     <v:String x:Key="ENGL">EN</v:String>
     <v:String x:Key="RU">РУ</v:String>
     
-    <v:String x:Key="log_in">Войти</v:String>
+    <v:String x:Key="log_in">Авторизация</v:String>
+    <v:String x:Key="registration">Регистрация</v:String>
+    <v:String x:Key="RegMsg">Есть аккаунт?</v:String>
+    
     <v:String x:Key="tagline">Всё возможно, пока не сделан выбор.</v:String>
     <v:String x:Key="UserName">Логин</v:String>
     <v:String x:Key="Password">Пароль</v:String>

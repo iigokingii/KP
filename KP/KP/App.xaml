@@ -11,6 +11,8 @@
 
                 <ResourceDictionary Source="Resources/ResourceDictionary/Styles.xaml"/>
                 <ResourceDictionary Source="Resources/Theme/Dark.xaml"/>
+                
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary> 
         

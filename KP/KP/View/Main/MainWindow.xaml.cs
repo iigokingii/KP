@@ -28,10 +28,7 @@ namespace KP
         public MainWindow()
         {
             InitializeComponent();
-            using (DbAppContext db = new DbAppContext())
-            {
-                
-            }
+            
         }
 
 /*        [DllImport("user32.dll")]

@@ -20,23 +20,8 @@ namespace KP.ViewModel.LoginViewModel
         UnitOfWork unit;
         private string _username;
         private SecureString _password;
-       //private string _email;
         private string _errorMessage;
         private bool _isViewVisible = true;
-
-        /*public string UserMail
-        {
-            get
-            {
-                return _email;
-            }
-            set
-            {
-                _email = value;
-                OnPropertyChanged("UserMail");
-            }
-        }*/
-
         public string Username
         {
             get
@@ -106,17 +91,6 @@ namespace KP.ViewModel.LoginViewModel
                 validData = false;
             return validData;
         }
-
-       /* private bool EmailValid()
-        {
-            *//*string template = "^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$";
-            Regex regex = new Regex(template);
-            MatchCollection match = regex.Matches(_email);
-            if(match.Count==1)*//*
-                return true;
-            //return false;
-        }*/
-
         private void ExecuteLoginCommand(object obj)
         {
             bool isValid = unit.Users.AuthenticateUser(new NetworkCredential(Username,Password));

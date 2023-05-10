@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:FA="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-        xmlns:local="clr-namespace:KP"
+        xmlns:viewModel="clr-namespace:KP.ViewModel"
+
+        xmlns:local="clr-namespace:KP.View"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="700" Width="1300"
@@ -13,6 +15,21 @@
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         >
+    <Window.DataContext>
+        <viewModel:ManePageViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <local:HomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:CatalogViewModel}">
+            <local:CatalogView/>
+        </DataTemplate>
+    </Window.Resources>
+    
+
+
+
     <Border CornerRadius="10" Opacity="1" BorderThickness="3" Style="{DynamicResource LoginStyle}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -28,7 +45,9 @@
                         <TextBlock Margin="-5 0 0 0" FontSize="20px" VerticalAlignment="Center" Style="{DynamicResource TextSt}">GoKin</TextBlock>
                     </StackPanel>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE">
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowHomeViewCommand}"
+                                 IsChecked="True">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Home" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{StaticResource NavHome}" Style="{StaticResource menuButtonText}"/>
@@ -36,7 +55,8 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE">
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowCatalogViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Ticket" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{StaticResource NavCatalog}" Style="{StaticResource menuButtonText}"/>
@@ -125,10 +145,10 @@
                     <StackPanel Grid.Column="0"
                                 Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <FA:IconImage Icon="Home" Height="20" 
+                        <FA:IconImage Icon="{Binding IconOfHeader}" Height="20" 
                                       Width="20" Foreground="#D5CFF5"
                                       Margin="35 0 10 0"/>
-                        <TextBlock Text="Главная страница" 
+                        <TextBlock Text="{Binding CaptionOfHeader}" 
                                    Foreground="#D5CFF5"
                                    FontSize="16"
                                    FontFamily="Montserrat"
@@ -142,14 +162,35 @@
                                 VerticalAlignment="Center"
                                 Margin="0 0 10 0">
                         <Button Style="{StaticResource AccountButton}" Tag="#E285DE">
-                            <FA:IconImage Icon="AngleDown" Style="{StaticResource AccountButtonIconStyle}"/>
+                            <FA:IconImage Height="12" Width="12" Icon="AngleDown" Style="{StaticResource AccountButtonIconStyle}"/>
                         </Button>
-                        
-                        
+                        <TextBlock Text="{Binding CurrentUserProfile.Login}"
+                                   Foreground="#9497CD"
+                                   FontFamily="Montserrat"
+                                   FontSize="12"
+                                   VerticalAlignment="Center"/>
+                        <Ellipse Height="35px" Width="35px"
+                                 Stroke="#784DFD"
+                                 StrokeThickness="2"
+                                 Margin="10 0 10 0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding CurrentUserProfile.Avatar}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Button Style="{StaticResource AccountButton}" Tag="#4ADAEC">
+                            <FA:IconImage Icon="Clock" Style="{StaticResource AccountButtonIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource AccountButton}" Tag="#FF47CA">
+                            <FA:IconImage Icon="Envelope" Style="{StaticResource AccountButtonIconStyle}"/>
+                        </Button>
+                        <Button Style="{StaticResource AccountButton}" Tag="#78DBE2">
+                            <FA:IconImage Icon="BELL" Style="{StaticResource AccountButtonIconStyle}"/>
+                        </Button>
                     </StackPanel>
-                    
-                    
                 </Grid>
+                <ContentControl Content="{Binding CurrentChildView}"
+                                Grid.Row="2"
+                                Margin="25"/>
                 
             </Grid>
         </Grid>

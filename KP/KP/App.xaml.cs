@@ -1,6 +1,7 @@
 ﻿using KP.db.context;
 using KP.dbClasses;
 using KP.View.login;
+using KP.View.Registration;
 using KP.ViewModel.LoginViewModel;
 using System;
 using System.Collections.Generic;
@@ -21,44 +22,23 @@ namespace KP
         DbAppContext db;
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var loginView = new login();
-            loginView.Show();
-            loginView.IsVisibleChanged += (s, ev) =>
+            var regView = new Registration();
+            regView.ShowDialog();
+            if (regView.IsLoaded && regView.IsVisible == false)
             {
-                if (loginView.IsVisible == false && loginView.IsLoaded)
+                regView.Close();
+                var loginView = new login();
+                loginView.Show();
+                loginView.IsVisibleChanged += (s, ev) =>
                 {
-                    var mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    loginView.Close();
-                }
-            };
+                    if (loginView.IsVisible == false && loginView.IsLoaded)
+                    {
+                        var mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        loginView.Close();
+                    }
+                };
+            }
         }
-
-
-
-
-        /* //private NavigationStore _navigationStores;
-         App()
-         {
-           //  _navigationStores=new NavigationStore();
-         }
-         protected override void OnStartup(StartupEventArgs e)
-         {
-             MainWindow = new MainWindow();
-             MainWindow.Show();
-             *//*{
-                 DataContext     
-             }*//*
-         }*/
-
-        /* public partial class MainWindow : Window
-         {
-             public MainWindow()
-             {
-                 InitializeComponent();
-             }
-         }*/
-
-
     }
 }
