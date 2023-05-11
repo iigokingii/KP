@@ -25,6 +25,9 @@
         <DataTemplate DataType="{x:Type viewModel:CatalogViewModel}">
             <local:CatalogView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:AddViewModel}">
+            <local:AddView/>
+        </DataTemplate>
     </Window.Resources>
     
 
@@ -76,6 +79,15 @@
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Home" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{StaticResource NavCatalogSeries}" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+
+                    </RadioButton>
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowAddViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <FA:IconImage Icon="Add"  Style="{StaticResource menuButtonIconStyle}"/>
+                            <TextBlock Text="{StaticResource NavAdd}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
@@ -188,8 +200,18 @@
                         </Button>
                     </StackPanel>
                 </Grid>
+                <!--<StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 0 0">
+                    <TextBlock VerticalAlignment="Center" Margin="5" Style="{DynamicResource StUN}" Text="{DynamicResource Search}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox CaretBrush="Red" Margin="5 0 0 0" x:Name="UserName" 
+                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding Username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        --><!--<Image Source="D:\2k2s\KP\KP\KP\images\icons\user.png" Width="16px"></Image>--><!--
+                        <FA:IconImage Icon="Search" Width="20px" Height="20px"/>
+
+                    </StackPanel>
+                </StackPanel>-->
                 <ContentControl Content="{Binding CurrentChildView}"
-                                Grid.Row="2"
+                                Grid.Row="3"
                                 Margin="25"/>
                 
             </Grid>

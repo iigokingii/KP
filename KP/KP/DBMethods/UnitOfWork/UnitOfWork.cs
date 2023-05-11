@@ -1,4 +1,5 @@
 ﻿using KP.db.context;
+using KP.DBMethods.Repositories;
 using KP.DBMethods.Repositories.UserProfileRepositor;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace KP.DBMethods.UnitOfWork
     {
         DbAppContext db = new DbAppContext();
         private UserProfileRepository _userProfileReposit;
-        
+        private MiniItemInfoRepository _miniItemInfoRepository;
 
 
         public UserProfileRepository Users
@@ -24,6 +25,17 @@ namespace KP.DBMethods.UnitOfWork
                 return _userProfileReposit;
             }
         }
+        public MiniItemInfoRepository MiniItemInfoRepository
+        {
+            get
+            {
+                if (_miniItemInfoRepository == null)
+                    _miniItemInfoRepository = new MiniItemInfoRepository();
+                return _miniItemInfoRepository;
+            }
+        }
+
+
 
 
 

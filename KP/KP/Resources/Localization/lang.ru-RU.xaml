@@ -21,6 +21,20 @@
     <v:String x:Key="NavCatalogSeries">Сериалы</v:String>
     <v:String x:Key="NavLiked">Понравившееся</v:String>
     <v:String x:Key="NavWatchLater">Посмотреть позже</v:String>
+    <v:String x:Key="NavAdd">Добавить</v:String>
+
+    <v:String x:Key="movieName">Имя</v:String>
+    <v:String x:Key="movieGenre">Жанр</v:String>
+    <v:String x:Key="movieYear">Год</v:String>
+    <v:String x:Key="movieCountry">Страна</v:String>
+    <v:String x:Key="movieDescription">Описание</v:String>
+    <v:String x:Key="movieSmallPoster">Добавить постер</v:String>
+    <v:String x:Key="movieAddFrame">Добавить кадры из фильма/сериала</v:String>
+
+    <v:String x:Key="movieAddBut">Добавить данные в БД</v:String>
+
+
+    <v:String x:Key="Search">Поиск</v:String>
 
 
 </ResourceDictionary>

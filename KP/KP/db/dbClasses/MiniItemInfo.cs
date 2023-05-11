@@ -13,7 +13,8 @@ namespace KP.dbClasses
         public int ID { get; set; }
         public string Name { get; set; }
         public string Genre { get; set; }
-        public byte[] SmallIMG { get; set; }
+        public string Year { get; set; }
+        public byte[]? SmallIMG { get; set; }
 
         public BigItemInfo? BigItemInfo { get; set; }
 

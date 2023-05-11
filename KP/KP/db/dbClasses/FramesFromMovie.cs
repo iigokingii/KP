@@ -11,7 +11,7 @@ namespace KP.dbClasses
     public class FramesFromMovie
     {
         public int ID { get; set; }
-        public byte[] Frame { get; set; }
+        public byte[]? Frame { get; set; }
 
         public BigItemInfo? BigItemInfo { get; set; }
 

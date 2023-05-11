@@ -11,7 +11,7 @@ namespace KP.dbClasses
     public class Review
     {
         public int ID { get; set; }
-        public byte[] Avatar { get; set; }
+        public byte[]? Avatar { get; set; }
         public string Login { get; set; }
         public string UserReviewText { get; set; }
 

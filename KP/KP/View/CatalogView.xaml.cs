@@ -1,5 +1,8 @@
-﻿using System;
+﻿using KP.dbClasses;
+using KP.DBMethods.UnitOfWork;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +23,11 @@ namespace KP.View
     /// </summary>
     public partial class CatalogView : UserControl
     {
+        
+
         public CatalogView()
         {
+            
             InitializeComponent();
         }
     }

@@ -10,6 +10,7 @@ using System.Windows.Input;
 using FontAwesome.Sharp;
 using KP.dbClasses;
 using KP.DBMethods.UnitOfWork;
+using KP.View;
 using KP.ViewModel.BaseModels;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -27,7 +28,7 @@ namespace KP.ViewModel
 
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCatalogViewCommand { get; }
-
+        public ICommand ShowAddViewCommand { get; }
 
 
         public ManePageViewModel()
@@ -36,8 +37,16 @@ namespace KP.ViewModel
             LoadCurrentUserData();
             ShowHomeViewCommand = new ViewModelCommandBase(ShowHome);
             ShowCatalogViewCommand = new ViewModelCommandBase(ShowCatalog);
-
+            ShowAddViewCommand = new ViewModelCommandBase(ShowAdd);
             ShowHome(null);
+
+        }
+
+        private void ShowAdd(object obj)
+        {
+            CurrentChildView = new AddViewModel();
+            CaptionOfHeader = "Add";
+            IconOfHeader = IconChar.Add;
 
         }
 
@@ -54,13 +63,6 @@ namespace KP.ViewModel
             CaptionOfHeader = "Home";
             IconOfHeader = IconChar.Home;
         }
-
-
-
-
-
-
-
 
 
         public ViewModelBase CurrentChildView
@@ -107,9 +109,9 @@ namespace KP.ViewModel
 
         private void LoadCurrentUserData()
         {
-           
-            //Thread.CurrentPrincipal = new GenericPrincipal(
-            //       new GenericIdentity("admin"), null);
+
+            Thread.CurrentPrincipal = new GenericPrincipal(
+                   new GenericIdentity("admin"), null);
 
             var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
             if (user != null)

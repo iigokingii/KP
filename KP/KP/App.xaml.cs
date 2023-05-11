@@ -22,7 +22,7 @@ namespace KP
         DbAppContext db;
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var regView = new Registration();
+            /*var regView = new Registration();
             regView.ShowDialog();
             if (regView.IsLoaded && regView.IsVisible == false)
             {
@@ -32,13 +32,13 @@ namespace KP
                 loginView.IsVisibleChanged += (s, ev) =>
                 {
                     if (loginView.IsVisible == false && loginView.IsLoaded)
-                    {
+                    {*/
                         var mainWindow = new MainWindow();
                         mainWindow.Show();
-                        loginView.Close();
+                        /*loginView.Close();
                     }
                 };
-            }
+            }*/
         }
     }
 }

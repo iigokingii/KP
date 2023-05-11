@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "GErXlR0s0O1MYc2sA4Den0PwJxefyj2nNRujrVGGT1CbVtT/8fZqzKlvL63PEngBBhuHGO8+30p+brXk/QwHMQ==",
+  "dgSpecHash": "UWSnzrrPJsN/+RrzvWJoxROhHS2WRN8fmTCNh77QCU/UAh8x+g3sLsIUnH82JYvFy926CTuNa9s2m/lyvC/URQ==",
   "success": true,
   "projectFilePath": "D:\\2k2s\\KP\\KP\\KP\\KP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

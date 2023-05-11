@@ -11,7 +11,7 @@ namespace KP.dbClasses
     public class BigItemInfo
     {
         public int ID { get; set; }
-         public byte[] BigImg { get; set; }
+         public byte[]? BigImg { get; set; }
         public string Year { get; set; }
         public string Genre { get; set; }
         public string Country { get; set; }

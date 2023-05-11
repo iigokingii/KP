@@ -56,6 +56,18 @@
         <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Margin" Value="0,15,0,0"/>
     </Style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <Style x:Key="StInp" TargetType="Control">
         <Setter Property="Control.FontSize" Value="13"></Setter>
         <Setter Property="Control.FontWeight" Value="Medium"></Setter>
@@ -122,7 +134,48 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+   
+    
+    <!--Постер -->
+    <Style x:Key="PosterText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="12 8 0 0"/>
+        <Setter Property="Foreground" Value="#B784A7"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="MontSerrat"/>
+    </Style>
+    <Style x:Key="PosterContainer" TargetType="ListBoxItem">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    
+    <!--Шаблон для элементов в listbox-->
+    <DataTemplate x:Key="ListBoxItemTemplate">
+        <StackPanel Orientation="Vertical" Margin="15 10 10 40">
+            <Image Width="160" Height="200" Source="{Binding Path=SmallIMG}"/>
+            <TextBlock FontSize="15px" Style="{StaticResource PosterText}" Text="{Binding Path=Name}"/>
+            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Genre}"/>
+            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Year}"/>
+        </StackPanel>
+    </DataTemplate>
 
+    <Style x:Key="richTextBlStyle" TargetType="RichTextBox">
+        <Setter Property="Control.FontSize" Value="13"></Setter>
+        <Setter Property="Control.FontWeight" Value="Medium"></Setter>
+        <Setter Property="Control.FontFamily" Value="Montserrat"/>
+        <Setter Property="Control.Background" Value="Transparent"></Setter>
+        <Setter Property="Control.Foreground" Value="White"/>
+        <Setter Property="Control.BorderBrush" Value="DarkGray"/>
+        <Setter Property="Control.BorderThickness" Value="2"/>
+        <Setter Property="Control.Height" Value="28"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Margin" Value="0,5,0,0"/>
+    </Style>
 
 
 

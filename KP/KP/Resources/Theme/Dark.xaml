@@ -143,6 +143,32 @@
         <Setter Property="Width" Value="16px"/>
         <Setter Property="Height" Value="16px"/>
     </Style>
+    
+    
+    
+    <!--Кнопка добавления постера-->
+
+    <Style x:Key="AddPosterButton" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="0 10 0 0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#9497CD"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Foreground" Value="#ABCDEF"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 
 

@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="KP.View.AddView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:FA="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:toolkit ="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:local="clr-namespace:KP.View"
+             xmlns:viewModel="clr-namespace:KP.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="800"
+            >
+    <UserControl.DataContext>
+        <viewModel:AddViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="36"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.55*"/>
+                <ColumnDefinition Width="0.75*"/>
+                <ColumnDefinition Width="1.55*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <StackPanel Width="206" HorizontalAlignment="Left">
+                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieName}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox  CaretBrush="Red" x:Name="movieName" 
+                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding movieName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieGenre}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox  CaretBrush="Red" x:Name="movieGenre" 
+                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding Genre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieYear}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox  CaretBrush="Red" x:Name="movieYear" 
+                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding Date,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieCountry}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox  CaretBrush="Red" x:Name="movieCountry" 
+                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding Country,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="320" Margin="0 30 0 0" HorizontalAlignment="Left">
+                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieDescription}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <toolkit:RichTextBox Margin="0 10 0 0" CaretBrush="Red" x:Name="movieDescription" 
+                                 Width="320px" Height="100"
+                                 Style="{StaticResource richTextBlStyle}"
+                                 Text="{Binding Description}">
+                        </toolkit:RichTextBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Margin="10 0 10 10"
+                       Width="206"
+                       Text="{Binding ErrorMsg}"
+                       Foreground="Red"
+                       FontSize="12"
+                       FontFamily="MontSerrat"
+                       FontWeight="Medium"
+                       TextWrapping="Wrap "/>
+                
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <StackPanel HorizontalAlignment="Center">
+                    <Border BorderThickness="1"
+                    BorderBrush="#FF000000"
+                    Width="115" Height="140"
+                    Margin="0 12 0 0">
+                        <Image x:Name="imgPicture" Width="115" Height="140"
+                           Source="{Binding Image}"/>
+                    </Border>
+                    <Button Content="{StaticResource movieSmallPoster}" 
+                        Style="{StaticResource AddPosterButton}"
+                        Command="{Binding AddPosterImage}"
+                        />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Margin="0" HorizontalAlignment="Center" Style="{DynamicResource StUN}" Text="{DynamicResource movieAddFrame}"></TextBlock>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel  Orientation="Horizontal">
+                        <FA:IconImage Icon="Add" Margin="10"/>
+                        <Border BorderThickness="1"
+                                BorderBrush="#FF000000"
+                                Width="250" Height="140"
+                                Margin="0 12 0 0">
+                            <Image x:Name="frame1" Width="250" Height="140"
+                           Source="{Binding Image}"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal">
+                        <FA:IconImage Icon="Add" Margin="10"/>
+                        <Border BorderThickness="1"
+                                BorderBrush="#FF000000"
+                                Width="250" Height="140"
+                                Margin="0 12 0 0">
+                            <Image x:Name="frame2" Width="250" Height="140"
+                           Source="{Binding Image}"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal">
+                        <FA:IconImage Icon="Add" Margin="10"/>
+                        <Border BorderThickness="1"
+                                BorderBrush="#FF000000"
+                                Width="250" Height="140"
+                                Margin="0 12 0 0">
+                            <Image x:Name="frame3" Width="250" Height="140"
+                           Source="{Binding Image}"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Button Grid.Row="1" Style="{StaticResource AddPosterButton}"
+                    Width="150px"
+                    Content="{StaticResource movieAddBut}"
+                    Command="{Binding AddMiniItemInfoCommand}"
+                    Margin="0"/>
+        
+        
+    </Grid>
+</UserControl>
