@@ -23,7 +23,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style x:Key="navigationStyle" TargetType="Border">
         <Setter Property="CornerRadius" Value="10 0 0 10"/>
         <Setter Property="Margin" Value="0"/>
@@ -37,9 +37,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    
-    
     <Style x:Key="menuButton" TargetType="RadioButton">
         <Setter Property="Height" Value="50px"/>
         <Setter Property="Margin" Value="-5 0 0 5"/>
@@ -171,8 +168,76 @@
     </Style>
 
 
+    <!--<Style x:Key="menuButton" TargetType="RadioButton">
+        <Setter Property="Height" Value="50px"/>
+        <Setter Property="Margin" Value="-5 0 0 5"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#737680"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="4 0 0 0"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0 0 0 5"/>
+                <Setter Property="Background" Value="#281269"/>
+                <Setter Property="Foreground" Value="#BCBEEB"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=Tag,RelativeSource={RelativeSource Self}}"/>
+            </Trigger>
+
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Margin" Value="0 0 0 5"/>
+                <Setter Property="Background" Value="#2B1372"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag,RelativeSource={RelativeSource Self}}"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=Tag,RelativeSource={RelativeSource Self}}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>-->
+    
+    
+    
+    <Style x:Key="AddFrameButton" TargetType="Button">
+        <Setter Property="Height" Value="50px"/>
+        <Setter Property="Width" Value="50px"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#737680"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Margin" Value="-5 0 0 5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="4 0 0 0"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </Style.Triggers>
+        
+        
+    </Style>
 
 
+    <Style x:Key="AddFrameIconStyle" TargetType="FA:IconImage">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Width" Value="20px"/>
+        <Setter Property="Height" Value="20px"/>
+    </Style>
 
 
 

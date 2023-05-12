@@ -50,7 +50,8 @@
                     <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieCountry}"></TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <TextBox  CaretBrush="Red" x:Name="movieCountry" 
-                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding Country,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                  Width="206px" Style="{DynamicResource StInp}" 
+                                  Text="{Binding Country,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Width="320" Margin="0 30 0 0" HorizontalAlignment="Left">
@@ -63,19 +64,9 @@
                         </toolkit:RichTextBox>
                     </StackPanel>
                 </StackPanel>
-
-                <TextBlock Margin="10 0 10 10"
-                       Width="206"
-                       Text="{Binding ErrorMsg}"
-                       Foreground="Red"
-                       FontSize="12"
-                       FontFamily="MontSerrat"
-                       FontWeight="Medium"
-                       TextWrapping="Wrap "/>
-                
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <StackPanel HorizontalAlignment="Center">
+                <StackPanel>
                     <Border BorderThickness="1"
                     BorderBrush="#FF000000"
                     Width="115" Height="140"
@@ -90,46 +81,66 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="2">
-                <TextBlock Margin="0" HorizontalAlignment="Center" Style="{DynamicResource StUN}" Text="{DynamicResource movieAddFrame}"></TextBlock>
+                <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieAddFrame}"></TextBlock>
                 <StackPanel Orientation="Vertical">
                     <StackPanel  Orientation="Horizontal">
-                        <FA:IconImage Icon="Add" Margin="10"/>
+                        <Button Style="{StaticResource AddFrameButton}"
+                                Command="{Binding AddFrame1Command}">
+                            <FA:IconImage Icon="Add" Style="{StaticResource AddFrameIconStyle}" Foreground="Black"/>
+                        </Button>
                         <Border BorderThickness="1"
                                 BorderBrush="#FF000000"
                                 Width="250" Height="140"
                                 Margin="0 12 0 0">
                             <Image x:Name="frame1" Width="250" Height="140"
-                           Source="{Binding Image}"/>
+                           Source="{Binding Frame1}"/>
                         </Border>
                     </StackPanel>
                     <StackPanel  Orientation="Horizontal">
-                        <FA:IconImage Icon="Add" Margin="10"/>
+                        <Button Style="{StaticResource AddFrameButton}"
+                                Command="{Binding AddFrame2Command}">
+                            <FA:IconImage Icon="Add" Style="{StaticResource AddFrameIconStyle}" Foreground="Black"/>
+                        </Button>
+                        
                         <Border BorderThickness="1"
                                 BorderBrush="#FF000000"
                                 Width="250" Height="140"
                                 Margin="0 12 0 0">
                             <Image x:Name="frame2" Width="250" Height="140"
-                           Source="{Binding Image}"/>
+                           Source="{Binding Frame2}"/>
                         </Border>
                     </StackPanel>
                     <StackPanel  Orientation="Horizontal">
-                        <FA:IconImage Icon="Add" Margin="10"/>
+                        <Button Style="{StaticResource AddFrameButton}"
+                                Command="{Binding AddFrame3Command}">
+                            <FA:IconImage Icon="Add" Style="{StaticResource AddFrameIconStyle}" Foreground="Black"/>
+                        </Button>
                         <Border BorderThickness="1"
                                 BorderBrush="#FF000000"
                                 Width="250" Height="140"
                                 Margin="0 12 0 0">
                             <Image x:Name="frame3" Width="250" Height="140"
-                           Source="{Binding Image}"/>
+                           Source="{Binding Frame3}"/>
                         </Border>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Button Grid.Row="1" Style="{StaticResource AddPosterButton}"
+        <StackPanel Grid.Row="1" >
+            <TextBlock TextWrapping="Wrap "
+                        Width="206"
+                        Text="{Binding ErrorMsg}"
+                        Foreground="Red"
+                        FontSize="12"
+                        FontFamily="MontSerrat"
+                        FontWeight="Medium"/>
+            <Button Style="{StaticResource AddPosterButton}"
                     Width="150px"
+                    Margin="-75 0 0 0"
                     Content="{StaticResource movieAddBut}"
-                    Command="{Binding AddMiniItemInfoCommand}"
-                    Margin="0"/>
+                    Command="{Binding AddMiniItemInfoCommand}"/>
+
+        </StackPanel>
         
         
     </Grid>

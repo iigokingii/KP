@@ -31,14 +31,20 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
             validUser = us==null? false : true;
             return validUser;
         }
+        //Todo
         public void Edit(UserProfile _user)
         {
             UserProfile user= db.userProfiles.FirstOrDefault(p => p.Login == _user.Login && p.Email == _user.Email && p.ID == _user.ID);
-            user.reviews = _user.reviews;
-            user.Email = _user.Email;
-            user.Avatar = _user.Avatar;
-            user.ID = _user.ID;
-            user.Login= _user.Login;
+            if (user != null)
+            {
+                user.reviews = _user.reviews;
+                user.Email = _user.Email;
+                user.Avatar = _user.Avatar;
+                user.ID = _user.ID;
+                user.Login = _user.Login;
+
+            }
+            
             this.Save();
         }
 

@@ -14,8 +14,18 @@ namespace KP.DBMethods.UnitOfWork
         DbAppContext db = new DbAppContext();
         private UserProfileRepository _userProfileReposit;
         private MiniItemInfoRepository _miniItemInfoRepository;
+        private FramesFromMovieRepository _framesFromMovieRepository;
+        private BigItemInfoRepository _bigItemInfoRepository;
 
-
+        public BigItemInfoRepository BigItemInfoRepository
+        {
+            get
+            {
+                if (_bigItemInfoRepository == null)
+                    _bigItemInfoRepository = new BigItemInfoRepository();
+                return _bigItemInfoRepository;
+            }
+        }
         public UserProfileRepository Users
         {
             get
@@ -34,13 +44,15 @@ namespace KP.DBMethods.UnitOfWork
                 return _miniItemInfoRepository;
             }
         }
-
-
-
-
-
-
-
+        public FramesFromMovieRepository FramesFromMovieRepository
+        {
+            get
+            {
+                if (_framesFromMovieRepository == null)
+                    _framesFromMovieRepository = new FramesFromMovieRepository();
+                return _framesFromMovieRepository;
+            }
+        }
 
 
         private bool disponsed = false;

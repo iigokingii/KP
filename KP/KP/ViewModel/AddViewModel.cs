@@ -20,6 +20,7 @@ namespace KP.ViewModel
     internal class AddViewModel:ViewModelBase
     {
         UnitOfWork unit;
+        List<byte[]> frames;
         string _movieName;
         string _genre;
         ImageSource _image;
@@ -36,15 +37,134 @@ namespace KP.ViewModel
 
         public ICommand AddPosterImage { get; }
         public ICommand AddMiniItemInfoCommand { get; }
+        public ICommand AddFrame1Command { get; }
+        public ICommand AddFrame2Command { get; }
+        public ICommand AddFrame3Command { get; }
 
 
         public AddViewModel()
         {
             AddPosterImage = new ViewModelCommandBase(AddPoster);
             AddMiniItemInfoCommand = new ViewModelCommandBase(AddMiniItemInfo);
+            AddFrame1Command = new ViewModelCommandBase(addFrame1);
+            AddFrame2Command = new ViewModelCommandBase(addFrame2);
+            AddFrame3Command = new ViewModelCommandBase(addFrame3);
             unit = new UnitOfWork();
-            
+            frames = new List<byte[]>();
         }
+
+        private void addFrame3(object obj)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image|*.jpg;*.jpeg;*.png;";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(openFileDialog.FileName, UriKind.RelativeOrAbsolute);
+                    image.EndInit();
+
+                    // Замораживаем изображение
+                    image.Freeze();
+
+                    // Устанавливаем изображение в качестве источника для элемента Image
+                    Frame3 = image;
+
+                    string Path = openFileDialog.FileName;
+                    byte[] imageData;
+                    using (FileStream fs = new FileStream(Path, FileMode.Open))
+                    {
+                        imageData = new byte[fs.Length];
+                        fs.Read(imageData, 0, imageData.Length);
+                    }
+                    frames.Add(imageData);
+                    string t = "";
+                }
+                catch
+                {
+                    System.Windows.MessageBox.Show("Выберите файл подходящего формата.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void addFrame2(object obj)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image|*.jpg;*.jpeg;*.png;";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(openFileDialog.FileName, UriKind.RelativeOrAbsolute);
+                    image.EndInit();
+
+                    // Замораживаем изображение
+                    image.Freeze();
+
+                    // Устанавливаем изображение в качестве источника для элемента Image
+                    Frame2 = image;
+
+                    string Path = openFileDialog.FileName;
+                    byte[] imageData;
+                    using (FileStream fs = new FileStream(Path, FileMode.Open))
+                    {
+                        imageData = new byte[fs.Length];
+                        fs.Read(imageData, 0, imageData.Length);
+                    }
+                    frames.Add(imageData);
+                }
+                catch
+                {
+                    System.Windows.MessageBox.Show("Выберите файл подходящего формата.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void addFrame1(object obj)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image|*.jpg;*.jpeg;*.png;";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(openFileDialog.FileName, UriKind.RelativeOrAbsolute);
+                    image.EndInit();
+
+                    // Замораживаем изображение
+                    image.Freeze();
+
+                    // Устанавливаем изображение в качестве источника для элемента Image
+                    Frame1 = image;
+
+                    string Path = openFileDialog.FileName;
+                    byte[] imageData;
+                    using (FileStream fs = new FileStream(Path, FileMode.Open))
+                    {
+                        imageData = new byte[fs.Length];
+                        fs.Read(imageData, 0, imageData.Length);
+                    }
+                    frames.Add(imageData);
+                }
+                catch
+                {
+                    System.Windows.MessageBox.Show("Выберите файл подходящего формата.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
         public ImageSource Frame4
         {
             get
