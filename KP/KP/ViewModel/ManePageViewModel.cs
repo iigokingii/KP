@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 using KP.dbClasses;
 using KP.DBMethods.UnitOfWork;
 using KP.View;
+using KP.View.login;
 using KP.ViewModel.BaseModels;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -23,6 +24,7 @@ namespace KP.ViewModel
         private string ErrorMsg;
 
         private ViewModelBase _currChildView;
+
         private string _captionOfHeader;
         private IconChar _iconOfHeader;
 
@@ -123,6 +125,7 @@ namespace KP.ViewModel
                     Avatar = user.Avatar,
                     reviews = user.reviews,
                     Email = user.Email
+                
                 };
                 
             }

@@ -102,3 +102,5 @@ D:\2k2s\KP\KP\KP\bin\Debug\net6.0-windows\ro\Xceed.Wpf.AvalonDock.NET5.resources
 D:\2k2s\KP\KP\KP\bin\Debug\net6.0-windows\ru\Xceed.Wpf.AvalonDock.NET5.resources.dll
 D:\2k2s\KP\KP\KP\bin\Debug\net6.0-windows\sv\Xceed.Wpf.AvalonDock.NET5.resources.dll
 D:\2k2s\KP\KP\KP\bin\Debug\net6.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\ItemView.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\ItemView.baml

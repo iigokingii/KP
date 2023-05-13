@@ -16,12 +16,17 @@ namespace KP.DBMethods.Repositories
         {
             db = new DbAppContext();
         }
-
+        public int GetUserId(MiniItemInfo user)
+        {
+            MiniItemInfo us = db.miniItemInfos.FirstOrDefault(p => user.Year == p.Year && user.Name == p.Name && user.Genre == p.Genre);
+            if(us!=null)
+                return us.ID;
+            return -1;
+        }
 
         public void Add(MiniItemInfo user)
         {
             db.miniItemInfos.Add(user);
-            this.Save();
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -41,7 +46,7 @@ namespace KP.DBMethods.Repositories
 
         public MiniItemInfo GetById(int id)
         {
-            return db.miniItemInfos.FirstOrDefault(p => p.ID == id);
+            return db.miniItemInfos.FirstOrDefault(p => p.ID.Equals(id));
         }
 
         public MiniItemInfo GetByLogin(string login)
@@ -52,7 +57,6 @@ namespace KP.DBMethods.Repositories
         public void Remove(MiniItemInfo user)
         {
             db.Remove(user);
-            Save();
         }
 
         public void Save()

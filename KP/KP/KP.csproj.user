@@ -19,6 +19,9 @@
     <Compile Update="View\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ItemView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\login\login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ItemView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Main\MainWindow.xaml">

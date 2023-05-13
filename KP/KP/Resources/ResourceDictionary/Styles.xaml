@@ -147,7 +147,7 @@
     <Style x:Key="PosterContainer" TargetType="ListBoxItem">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Cursor" Value="Hand"/>
+                
                 <Setter Property="BorderThickness" Value="0"/>
             </Trigger>
         </Style.Triggers>
@@ -155,14 +155,16 @@
     
     
     <!--Шаблон для элементов в listbox-->
-    <DataTemplate x:Key="ListBoxItemTemplate">
-        <StackPanel Orientation="Vertical" Margin="15 10 10 40">
-            <Image Width="160" Height="200" Source="{Binding Path=SmallIMG}"/>
-            <TextBlock FontSize="15px" Style="{StaticResource PosterText}" Text="{Binding Path=Name}"/>
-            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Genre}"/>
-            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Year}"/>
-        </StackPanel>
-    </DataTemplate>
+    <!--<DataTemplate x:Key="ListBoxItemTemplate">
+        <Button Background="Transparent" BorderThickness="1" Command="{Binding testcom}">
+            <StackPanel Orientation="Vertical" Margin="15 10 10 40">
+                <Image Width="160" Height="200" Source="{Binding Path=SmallIMG}"/>
+                <TextBlock FontSize="15px" Style="{StaticResource PosterText}" Text="{Binding Path=Name}"/>
+                <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Genre}"/>
+                <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Year}"/>
+            </StackPanel>
+        </Button>
+    </DataTemplate>-->
 
     <Style x:Key="richTextBlStyle" TargetType="RichTextBox">
         <Setter Property="Control.FontSize" Value="13"></Setter>

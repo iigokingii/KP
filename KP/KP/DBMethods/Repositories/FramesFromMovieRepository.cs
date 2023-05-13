@@ -20,7 +20,6 @@ namespace KP.DBMethods.Repositories
         public void Add(FramesFromMovie user)
         {
             db.Add(user);
-            Save();
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -41,7 +40,7 @@ namespace KP.DBMethods.Repositories
 
         public FramesFromMovie GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.framesFromMovies.FirstOrDefault(p => p.ID.Equals(id));
         }
 
         public FramesFromMovie GetByLogin(string login)

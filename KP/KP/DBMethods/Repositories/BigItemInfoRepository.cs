@@ -19,7 +19,6 @@ namespace KP.DBMethods.Repositories
         public void Add(BigItemInfo user)
         {
             db.Add(user);
-            Save();
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -38,7 +37,7 @@ namespace KP.DBMethods.Repositories
 
         public BigItemInfo GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.bigItemInfoInfos.FirstOrDefault(p => p.ID.Equals(id));
         }
 
         public BigItemInfo GetByLogin(string login)

@@ -54,6 +54,15 @@ namespace KP.DBMethods.UnitOfWork
             }
         }
 
+        public void Save()
+        {
+            BigItemInfoRepository.Save();
+            Users.Save();
+            MiniItemInfoRepository.Save();
+            FramesFromMovieRepository.Save();
+
+        }
+
 
         private bool disponsed = false;
         public virtual void Disponse(bool disposing)

@@ -8,7 +8,7 @@
              xmlns:local="clr-namespace:KP.View"
              xmlns:viewModel="clr-namespace:KP.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="480" d:DesignWidth="800"
+             d:DesignHeight="550" d:DesignWidth="1000"
             >
     <UserControl.DataContext>
         <viewModel:AddViewModel/>
@@ -20,41 +20,76 @@
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.55*"/>
-                <ColumnDefinition Width="0.75*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.3*"/>
                 <ColumnDefinition Width="1.55*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Vertical">
-                <StackPanel Width="206" HorizontalAlignment="Left">
-                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieName}"></TextBlock>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  CaretBrush="Red" x:Name="movieName" 
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Grid.Row="0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="206" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieName}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieName" 
                                      Width="206px" Style="{DynamicResource StInp}" Text="{Binding movieName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-                <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
-                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieGenre}"></TextBlock>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  CaretBrush="Red" x:Name="movieGenre" 
+                    <StackPanel Margin="0 30 0 0" Width="206" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieNameOrig}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieNameOrig" 
+                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding MovieNameOrig,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieGenre}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieGenre" 
                                      Width="206px" Style="{DynamicResource StInp}" Text="{Binding Genre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-                <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
-                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieYear}"></TextBlock>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  CaretBrush="Red" x:Name="movieYear" 
+                    <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieYear}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieYear" 
                                      Width="206px" Style="{DynamicResource StInp}" Text="{Binding Date,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-                <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
-                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieCountry}"></TextBlock>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox  CaretBrush="Red" x:Name="movieCountry" 
+                    <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieCountry}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieCountry" 
                                   Width="206px" Style="{DynamicResource StInp}" 
                                   Text="{Binding Country,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieRatingIMDb}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieRatingIMDb" 
+                                  Width="206px" Style="{DynamicResource StInp}" 
+                                  Text="{Binding RatingIMDb,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieRatingKP}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieRatingKP" 
+                                  Width="206px" Style="{DynamicResource StInp}" 
+                                  Text="{Binding RatingKP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Width="206" Margin="0 30 0 0" HorizontalAlignment="Left">
+                        <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieFees}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox  CaretBrush="Red" x:Name="movieFees" 
+                                  Width="206px" Style="{DynamicResource StInp}" 
+                                  Text="{Binding Fees,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Width="320" Margin="0 30 0 0" HorizontalAlignment="Left">
+            </ScrollViewer>
+            <StackPanel HorizontalAlignment="Right" Grid.Column="1">
+                <StackPanel Width="320" Margin="0 0 0 0" HorizontalAlignment="Left">
                     <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieDescription}"></TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <toolkit:RichTextBox Margin="0 10 0 0" CaretBrush="Red" x:Name="movieDescription" 
@@ -64,9 +99,28 @@
                         </toolkit:RichTextBox>
                     </StackPanel>
                 </StackPanel>
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <StackPanel>
+                <StackPanel Width="320" Margin="0 10 0 0" HorizontalAlignment="Left">
+                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieDirectors}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <toolkit:RichTextBox Margin="0 10 0 0" CaretBrush="Red" x:Name="movieDirectors" 
+                                 Width="320px" Height="60"
+                                 Style="{StaticResource richTextBlStyle}"
+                                 Text="{Binding Directors}">
+                        </toolkit:RichTextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="320" Margin="0 10 0 0" HorizontalAlignment="Left">
+                    <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieActors}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <toolkit:RichTextBox Margin="0 10 0 0" CaretBrush="Red" x:Name="movieActors" 
+                                 Width="320px" Height="100"
+                                 Style="{StaticResource richTextBlStyle}"
+                                 Text="{Binding Actors}">
+                        </toolkit:RichTextBox>
+                    </StackPanel>
+                </StackPanel>
+                
+                <StackPanel HorizontalAlignment="Center">
                     <Border BorderThickness="1"
                     BorderBrush="#FF000000"
                     Width="115" Height="140"
@@ -78,11 +132,12 @@
                         Style="{StaticResource AddPosterButton}"
                         Command="{Binding AddPosterImage}"
                         />
+                    
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="2">
-                <TextBlock Margin="0" Style="{DynamicResource StUN}" Text="{DynamicResource movieAddFrame}"></TextBlock>
-                <StackPanel Orientation="Vertical">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource StUN}" Text="{DynamicResource movieAddFrame}"></TextBlock>
+                <StackPanel Margin="50 0 0 0" Orientation="Vertical">
                     <StackPanel  Orientation="Horizontal">
                         <Button Style="{StaticResource AddFrameButton}"
                                 Command="{Binding AddFrame1Command}">
@@ -90,9 +145,9 @@
                         </Button>
                         <Border BorderThickness="1"
                                 BorderBrush="#FF000000"
-                                Width="250" Height="140"
+                                Width="200" Height="100"
                                 Margin="0 12 0 0">
-                            <Image x:Name="frame1" Width="250" Height="140"
+                            <Image x:Name="frame1" Width="200" Height="100"
                            Source="{Binding Frame1}"/>
                         </Border>
                     </StackPanel>
@@ -104,9 +159,9 @@
                         
                         <Border BorderThickness="1"
                                 BorderBrush="#FF000000"
-                                Width="250" Height="140"
+                                Width="200" Height="100"
                                 Margin="0 12 0 0">
-                            <Image x:Name="frame2" Width="250" Height="140"
+                            <Image x:Name="frame2" Width="200" Height="100"
                            Source="{Binding Frame2}"/>
                         </Border>
                     </StackPanel>
@@ -117,10 +172,23 @@
                         </Button>
                         <Border BorderThickness="1"
                                 BorderBrush="#FF000000"
-                                Width="250" Height="140"
+                                Width="200" Height="100"
                                 Margin="0 12 0 0">
-                            <Image x:Name="frame3" Width="250" Height="140"
+                            <Image x:Name="frame3" Width="200" Height="100"
                            Source="{Binding Frame3}"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal">
+                        <Button Style="{StaticResource AddFrameButton}"
+                                Command="{Binding AddFrame4Command}">
+                            <FA:IconImage Icon="Add" Style="{StaticResource AddFrameIconStyle}" Foreground="Black"/>
+                        </Button>
+                        <Border BorderThickness="1"
+                                BorderBrush="#FF000000"
+                                Width="200" Height="100"
+                                Margin="0 12 0 0">
+                            <Image x:Name="frame4" Width="200" Height="100"
+                           Source="{Binding Frame4}"/>
                         </Border>
                     </StackPanel>
                 </StackPanel>
@@ -136,7 +204,7 @@
                         FontWeight="Medium"/>
             <Button Style="{StaticResource AddPosterButton}"
                     Width="150px"
-                    Margin="-75 0 0 0"
+                    Margin="-115 0 0 0"
                     Content="{StaticResource movieAddBut}"
                     Command="{Binding AddMiniItemInfoCommand}"/>
 

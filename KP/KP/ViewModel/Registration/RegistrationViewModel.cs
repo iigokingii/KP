@@ -103,13 +103,13 @@ namespace KP.ViewModel.Registration
         {
             IsViewVisible = false;
             var loginView = new login();
-            loginView.Show();
+            loginView.ShowDialog();
         }
 
         private bool CanExecuteLoginCommand(object obj)
         {
             bool validData = true;
-            if (string.IsNullOrEmpty(Username) || Password == null || Password.Length < 3 || !EmailValid())
+            if (string.IsNullOrEmpty(Username) || Password == null || Password.Length < 3 ||String.IsNullOrEmpty(_email)|| !EmailValid())
                 validData = false;
             return validData;
         }
@@ -142,6 +142,8 @@ namespace KP.ViewModel.Registration
 
         private void ExecuteLoginCommand(object obj)
         {
+            IsViewVisible = false;
+            
             UserProfile user = new UserProfile();
             user.Email = UserMail;
             user.Login = Username;
@@ -150,9 +152,9 @@ namespace KP.ViewModel.Registration
             user.Avatar = null;
             unit.Users.Add(user);
             unit.Users.Save();
-            IsViewVisible = false;
             var loginView = new login();
-            loginView.Show();
+            loginView.ShowDialog();
+
         }
     }
 }

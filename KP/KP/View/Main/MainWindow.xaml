@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:FA="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:viewModel="clr-namespace:KP.ViewModel"
-
         xmlns:local="clr-namespace:KP.View"
         mc:Ignorable="d"
         Title="MainWindow" 

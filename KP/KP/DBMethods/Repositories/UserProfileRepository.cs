@@ -21,7 +21,6 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
         public void Add(UserProfile user)
         {
             db.userProfiles.Add(user);
-            this.Save();
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -44,8 +43,6 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
                 user.Login = _user.Login;
 
             }
-            
-            this.Save();
         }
 
         public IEnumerable<UserProfile> GetAll()
@@ -57,7 +54,7 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
         /////////////TODO
         public UserProfile GetById(int id)
         {
-            return db.userProfiles.FirstOrDefault(p => p.ID == id);
+            return db.userProfiles.FirstOrDefault(p => p.ID.Equals(id));
         }
 
         public UserProfile GetByLogin(string login)
@@ -70,7 +67,6 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
         public void Remove(UserProfile user)
         {
             db.userProfiles.Remove(user);
-            this.Save();
         }
         public void Save()
         {

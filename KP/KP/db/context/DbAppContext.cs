@@ -20,11 +20,11 @@ namespace KP.db.context
             string connectionString = "Server=GOKING;Database=COURSE_PROJECT;Trusted_Connection=True;TrustServerCertificate=True;";
             builder.UseSqlServer(connectionString);
         }
-        /*public DbAppContext()
+        public DbAppContext()
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
-        }*/
+            /*Database.EnsureDeleted();*/
+            /*Database.EnsureCreated();*/
+        }
 
 
     }
