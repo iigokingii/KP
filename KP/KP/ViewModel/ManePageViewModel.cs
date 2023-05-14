@@ -52,6 +52,7 @@ namespace KP.ViewModel
         private void ShowSettings(object obj)
         {
             CurrentChildView = new SettingViewModel();
+            
             CaptionOfHeader = "Settings";
             IconOfHeader = IconChar.Gear;
         }

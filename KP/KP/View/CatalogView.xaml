@@ -87,16 +87,16 @@
                         <TextBlock Grid.Row="8" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieDirectors}"/>
                         <TextBlock Grid.Row="9" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieActors}"/>
 
-                            <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding TitleOrig,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Year,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Genre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Country,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding RatingIMDb,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding RatingKP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Fees,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Directories,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="9" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Actors,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding TitleOrig,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Year,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Genre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Country,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding RatingIMDb,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding RatingKP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Fees,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Directories,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="9" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Actors,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
                         <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
                             <Button Margin="0 0 0 0" Width="40" Height="40" Style="{StaticResource AccountButton}" Tag="#FF47CA">

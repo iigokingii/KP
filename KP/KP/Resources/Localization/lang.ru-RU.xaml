@@ -47,8 +47,12 @@
     <v:String x:Key="movieSmallPoster">Добавить постер: </v:String>
     <v:String x:Key="movieAddBut">Добавить данные в БД</v:String>
 
-
     <v:String x:Key="Search">Поиск</v:String>
+
+    <v:String x:Key="CategoryPopular">Популярное:</v:String>
+    <v:String x:Key="CategoryNew">Новинки:</v:String>
+    <v:String x:Key="CategoryGoKin">Выбор GoKin:</v:String>
+
 
 
 </ResourceDictionary>
