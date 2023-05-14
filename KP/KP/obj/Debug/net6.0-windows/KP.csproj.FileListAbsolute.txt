@@ -104,3 +104,5 @@ D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\refint\KP.dll
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\KP.pdb
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\KP.genruntimeconfig.cache
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\ref\KP.dll
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\UserProfileView.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\UserProfileView.baml

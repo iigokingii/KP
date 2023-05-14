@@ -27,6 +27,9 @@
         <DataTemplate DataType="{x:Type viewModel:AddViewModel}">
             <local:AddView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:UserProfileViewModel}">
+            <local:UserProfileView/>
+        </DataTemplate>
     </Window.Resources>
     
 
@@ -172,7 +175,8 @@
                                 FlowDirection="RightToLeft"
                                 VerticalAlignment="Center"
                                 Margin="0 0 10 0">
-                        <Button Style="{StaticResource AccountButton}" Tag="#E285DE">
+                        <Button Style="{StaticResource AccountButton}" Tag="#E285DE"
+                                Command="{Binding ShowUserProfileCommand}">
                             <FA:IconImage Height="12" Width="12" Icon="AngleDown" Style="{StaticResource AccountButtonIconStyle}"/>
                         </Button>
                         <TextBlock Text="{Binding CurrentUserProfile.Login}"

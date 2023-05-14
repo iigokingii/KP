@@ -10,14 +10,16 @@
     <v:String x:Key="RegMsg">Есть аккаунт?</v:String>
     
     <v:String x:Key="tagline">Всё возможно, пока не сделан выбор.</v:String>
-    <v:String x:Key="UserName">Логин</v:String>
-    <v:String x:Key="Password">Пароль</v:String>
-    <v:String x:Key="UserMail">Email</v:String>
+    <v:String x:Key="UserName">Логин:</v:String>
+    <v:String x:Key="Password">Пароль:</v:String>
+    <v:String x:Key="OldPassword">Старый пароль:</v:String>
+    <v:String x:Key="NewPassword">Новый пароль:</v:String>
+    <v:String x:Key="RepeatPassword">Повторите новый пароль:</v:String>
+    <v:String x:Key="UserAvatar">Сменить аватар</v:String>
+    <v:String x:Key="UserMail">Email:</v:String>
     <v:String x:Key="UserComment">Введите комментарий:</v:String>
     <v:String x:Key="UserCommentPublish">Опубликовать комментарий</v:String>
     <v:String x:Key="UsersComment">Комментарии пользователей: </v:String>
-
-
 
     <v:String x:Key="NavHome">Главная страница</v:String>
     <v:String x:Key="NavSettings">Настройки</v:String>
