@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="KP.View.SettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KP.View"
+             xmlns:viewModel="clr-namespace:KP.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:SettingViewModel/>
+    </UserControl.DataContext>
+    <StackPanel Width="200px" Height="300" Margin="20">
+        <TextBlock HorizontalAlignment="Center" Style="{DynamicResource StUN}" Text="{DynamicResource m_Title}"/>
+        <StackPanel Width="120" Orientation="Horizontal">
+            <Button Margin="5" Width="50" Height="35"
+                    Command="{Binding SwitchLangToRuCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\langs\RU.png"/>
+                </Button.Background>
+            </Button>
+            <Button Margin="5" Width="50" Height="35"
+                    Command="{Binding SwitchLangToEnCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\langs\EN.png"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -32,6 +32,7 @@ namespace KP.ViewModel
         public ICommand ShowCatalogViewCommand { get; }
         public ICommand ShowAddViewCommand { get; }
         public ICommand ShowUserProfileCommand { get; }
+        public ICommand ShowSettingsCommand { get; }
 
 
         public ManePageViewModel()
@@ -42,9 +43,17 @@ namespace KP.ViewModel
             ShowCatalogViewCommand = new ViewModelCommandBase(ShowCatalog);
             ShowAddViewCommand = new ViewModelCommandBase(ShowAdd);
             ShowUserProfileCommand = new ViewModelCommandBase(ShowUserProfile);
+            ShowSettingsCommand = new ViewModelCommandBase(ShowSettings);
             LoadCurrentUserData();
             ShowHome(null);
 
+        }
+
+        private void ShowSettings(object obj)
+        {
+            CurrentChildView = new SettingViewModel();
+            CaptionOfHeader = "Settings";
+            IconOfHeader = IconChar.Gear;
         }
 
         private void ShowUserProfile(object obj)

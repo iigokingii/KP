@@ -30,6 +30,9 @@
         <DataTemplate DataType="{x:Type viewModel:UserProfileViewModel}">
             <local:UserProfileView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:SettingViewModel}">
+            <local:SettingView/>
+        </DataTemplate>
     </Window.Resources>
     
 
@@ -55,7 +58,7 @@
                                  IsChecked="True">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Home" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavHome}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavHome}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
@@ -64,7 +67,7 @@
                                  Command="{Binding ShowCatalogViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Ticket" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavCatalog}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavCatalog}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
@@ -72,7 +75,7 @@
                                  Tag="#E285DE">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Film" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavCatalogFilms}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavCatalogFilms}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
@@ -80,7 +83,7 @@
                                  Tag="#E285DE">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Home" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavCatalogSeries}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavCatalogSeries}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
@@ -89,7 +92,7 @@
                                  Command="{Binding ShowAddViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Add"  Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavAdd}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavAdd}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
@@ -97,7 +100,7 @@
                                  Tag="#E285DE">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="ThumbsUp" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavLiked}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavLiked}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
@@ -105,18 +108,19 @@
                                  Tag="#E285DE">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Clock" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavWatchLater}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavWatchLater}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE">
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowSettingsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Gear" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{StaticResource NavSettings}" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="{DynamicResource NavSettings}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
-
                     </RadioButton>
+                    
                 </StackPanel>
             </Border>
             <Grid Grid.Column="1">

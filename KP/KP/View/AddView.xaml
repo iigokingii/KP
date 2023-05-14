@@ -137,7 +137,7 @@
                         <Image x:Name="imgPicture" Width="115" Height="140"
                            Source="{Binding Image}"/>
                     </Border>
-                    <Button Content="{StaticResource movieSmallPoster}" 
+                    <Button Content="{DynamicResource movieSmallPoster}" 
                         Style="{StaticResource AddPosterButton}"
                         Command="{Binding AddPosterImage}"
                         />

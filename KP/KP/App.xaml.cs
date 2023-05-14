@@ -49,6 +49,11 @@ namespace KP
 
             }*/
 
+
+
+
+
+
             /*var regView = new Registration();
             regView.ShowDialog();
             if (regView.IsLoaded && regView.IsVisible == false)

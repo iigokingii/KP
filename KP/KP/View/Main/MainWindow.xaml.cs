@@ -52,6 +52,8 @@ namespace KP
             this.WindowState = WindowState.Minimized;
         }
 
+        
+
         //private void MainPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         //{
         //    WindowInteropHelper helper = new WindowInteropHelper(this);
