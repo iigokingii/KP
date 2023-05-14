@@ -33,6 +33,9 @@
         <DataTemplate DataType="{x:Type viewModel:SettingViewModel}">
             <local:SettingView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:FilmsViewModel}">
+            <local:FilmsView/>
+        </DataTemplate>
     </Window.Resources>
     
 
@@ -72,7 +75,8 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE">
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowFilmsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Film" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{DynamicResource NavCatalogFilms}" Style="{StaticResource menuButtonText}"/>

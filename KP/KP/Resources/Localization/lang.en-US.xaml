@@ -53,5 +53,8 @@
     <v:String x:Key="CategoryPopular">Popular:</v:String>
     <v:String x:Key="CategoryNew">New:</v:String>
     <v:String x:Key="CategoryGoKin">GoKin Choice:</v:String>
+    <v:String x:Key="CategoryFantasy">Fantasy:</v:String>
+    <v:String x:Key="CategoryDetectives">Detectives:</v:String>
+    <v:String x:Key="CategoryActions">Actions:</v:String>
 
 </ResourceDictionary>

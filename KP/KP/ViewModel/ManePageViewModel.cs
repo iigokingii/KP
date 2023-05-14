@@ -33,6 +33,7 @@ namespace KP.ViewModel
         public ICommand ShowAddViewCommand { get; }
         public ICommand ShowUserProfileCommand { get; }
         public ICommand ShowSettingsCommand { get; }
+        public ICommand ShowFilmsCommand { get; }
 
 
         public ManePageViewModel()
@@ -44,9 +45,18 @@ namespace KP.ViewModel
             ShowAddViewCommand = new ViewModelCommandBase(ShowAdd);
             ShowUserProfileCommand = new ViewModelCommandBase(ShowUserProfile);
             ShowSettingsCommand = new ViewModelCommandBase(ShowSettings);
+            ShowFilmsCommand = new ViewModelCommandBase(ShowFilms);
+
             LoadCurrentUserData();
             ShowHome(null);
 
+        }
+
+        private void ShowFilms(object obj)
+        {
+            CurrentChildView = new FilmsViewModel();
+            CaptionOfHeader = "Films";
+            IconOfHeader = IconChar.Film;
         }
 
         private void ShowSettings(object obj)
