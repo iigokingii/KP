@@ -31,17 +31,27 @@ namespace KP.ViewModel
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCatalogViewCommand { get; }
         public ICommand ShowAddViewCommand { get; }
+        public ICommand ShowUserProfileCommand { get; }
 
 
         public ManePageViewModel()
         {
             unit = new UnitOfWork();
-            LoadCurrentUserData();
+
             ShowHomeViewCommand = new ViewModelCommandBase(ShowHome);
             ShowCatalogViewCommand = new ViewModelCommandBase(ShowCatalog);
             ShowAddViewCommand = new ViewModelCommandBase(ShowAdd);
+            ShowUserProfileCommand = new ViewModelCommandBase(ShowUserProfile);
+            LoadCurrentUserData();
             ShowHome(null);
 
+        }
+
+        private void ShowUserProfile(object obj)
+        {
+            CurrentChildView = new UserProfileViewModel();
+            CaptionOfHeader = "Profile";
+            IconOfHeader = IconChar.Sliders;
         }
 
         private void ShowAdd(object obj)
@@ -55,6 +65,8 @@ namespace KP.ViewModel
         private void ShowCatalog(object obj)
         {
             CurrentChildView = new CatalogViewModel();
+            Thread.CurrentPrincipal = new GenericPrincipal(
+                    new GenericIdentity(_currentUserProfile.Login), null);
             CaptionOfHeader = "Catalog";
             IconOfHeader = IconChar.Ticket;
         }
@@ -114,24 +126,32 @@ namespace KP.ViewModel
 
             /*Thread.CurrentPrincipal = new GenericPrincipal(
                    new GenericIdentity("admin"), null);*/
-
-            var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
-            if (user != null)
+            try
             {
-                CurrentUserProfile = new UserProfile()
+                var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
+                if (user != null)
                 {
-                    Login = user.Login,
-                    ID = user.ID,
-                    Avatar = user.Avatar,
-                    reviews = user.reviews,
-                    Email = user.Email
-                
-                };
-                
+                    CurrentUserProfile = new UserProfile()
+                    {
+                        Login = user.Login,
+                        ID = user.ID,
+                        Avatar = user.Avatar,
+                        reviews = user.reviews,
+                        Email = user.Email
+
+                    };
+
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь не вошел в аккаунт","log in",MessageBoxButton.OK);
+                    Thread.Sleep(1000);
+                    Application.Current.Shutdown();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                ErrorMsg = "Пользователь не вошел в аккаунт";
+                MessageBox.Show("Пользователь не вошел в аккаунт","log in",MessageBoxButton.OK);
                 Thread.Sleep(1000);
                 Application.Current.Shutdown();
             }

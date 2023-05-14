@@ -17,17 +17,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using KP.db.context;
+using System.Threading;
 
 namespace KP.ViewModel
 {
     internal class CatalogViewModel:ViewModelBase
     {
         UnitOfWork unit;
+        DbAppContext db = new DbAppContext();
         private ObservableCollection<MiniItemInfo> _miniItemInfos;
-        List<FramesFromMovie> frames;
         Visibility _isVisible = Visibility.Visible;
         Visibility _isVisibleItem = Visibility.Collapsed;
         BigItemInfo _bigItemInfo;
+        ObservableCollection<Review> _comments;
 
 
         string _title;
@@ -49,9 +51,9 @@ namespace KP.ViewModel
         string _comment;
 
 
-
-
         public ICommand ShowItemCommand { get; }
+        public ICommand AddCommentByUserCommand { get; }
+
         public CatalogViewModel()
         {
             
@@ -59,9 +61,25 @@ namespace KP.ViewModel
             var t = unit.MiniItemInfoRepository.GetAll();
             if (t != null)
                 _miniItemInfos = new ObservableCollection<MiniItemInfo>(t.Select(p => p));
+            _comments = new ObservableCollection<Review>();
             ShowItemCommand = new ViewModelCommandBase(ShowItem);
+            AddCommentByUserCommand = new ViewModelCommandBase(AddCommentByUser);
         }
-
+        private void AddCommentByUser(object obj)
+        {
+            Review review = new Review();
+            var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
+            review.Avatar = user.Avatar;
+            review.bigItemInfo = _bigItemInfo;
+            review.Date = DateTime.Now.ToShortDateString();
+            review.userProfile = user;
+            review.UserReviewText = Comment;
+            Comment = "";
+            review.Login = user.Login;
+            unit.ReviewRepository.Add(review);
+            Comments.Add(review);
+            unit.Save();
+        }
         private void ShowItem(object obj)
         {
             if (obj is MiniItemInfo)
@@ -72,8 +90,11 @@ namespace KP.ViewModel
             }
             IsVisibleItem = Visibility.Visible;
             IsVisible = Visibility.Collapsed;
-            DbAppContext db = new DbAppContext();
+            
             List<FramesFromMovie>frames = db.framesFromMovies.Include(c => c.BigItemInfo).Where(c=>c.BigItemInfo==_bigItemInfo).ToList();
+            var t = db.reviews.Include(c=>c.bigItemInfo).Where(c => c.bigItemInfo == _bigItemInfo).ToList();
+
+            Comments = new ObservableCollection<Review>(t.Select(p=>p));
 
             Frame1 = ConvertoBitmapImage(frames[0].Frame);
             Frame2 = ConvertoBitmapImage(frames[1].Frame);
@@ -104,7 +125,7 @@ namespace KP.ViewModel
             
             
 
-            string t = "";
+            string tsda = "";
 
         }
 
@@ -166,7 +187,6 @@ namespace KP.ViewModel
                 OnPropertyChanged("Frame1");
             }
         }
-
         public string Comment
         {
             get
@@ -299,6 +319,20 @@ namespace KP.ViewModel
                 OnPropertyChanged("Title");
             }
         }
+
+        public ObservableCollection<Review> Comments
+        {
+            get
+            {
+                return _comments;
+            }
+            set
+            {
+                _comments = value;
+                OnPropertyChanged("Comments");
+            }
+        }
+
         public ObservableCollection<MiniItemInfo> MiniItemInfos
         {
             get

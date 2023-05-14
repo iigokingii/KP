@@ -14,6 +14,10 @@
     <v:String x:Key="Password">Пароль</v:String>
     <v:String x:Key="UserMail">Email</v:String>
     <v:String x:Key="UserComment">Введите комментарий:</v:String>
+    <v:String x:Key="UserCommentPublish">Опубликовать комментарий</v:String>
+    <v:String x:Key="UsersComment">Комментарии пользователей: </v:String>
+
+
 
     <v:String x:Key="NavHome">Главная страница</v:String>
     <v:String x:Key="NavSettings">Настройки</v:String>

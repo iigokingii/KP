@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using KP.dbClasses;
 using System.Runtime.InteropServices;
 using KP.View.login;
+using System.IO;
 
 namespace KP.ViewModel.Registration
 {
@@ -137,23 +138,35 @@ namespace KP.ViewModel.Registration
                 Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
             }
         }
-
-
-
         private void ExecuteLoginCommand(object obj)
         {
-            IsViewVisible = false;
             
-            UserProfile user = new UserProfile();
-            user.Email = UserMail;
-            user.Login = Username;
-            string s = SecureStringToString(Password);
-            user.Password = s;
-            user.Avatar = null;
-            unit.Users.Add(user);
-            unit.Users.Save();
-            var loginView = new login();
-            loginView.ShowDialog();
+            UserProfile us = unit.Users.GetByLogin(Username);
+            if (us == null)
+            {
+                IsViewVisible = false;
+                UserProfile user = new UserProfile();
+                user.Email = UserMail;
+                user.Login = Username;
+                string s = SecureStringToString(Password);
+                user.Password = s;
+                string PathToPoster = "D:\\2k2s\\KP\\KP\\KP\\images\\icons\\default.jpg";
+                byte[] imageData;
+                using (FileStream fs = new FileStream(PathToPoster, FileMode.Open))
+                {
+                    imageData = new byte[fs.Length];
+                    fs.Read(imageData, 0, imageData.Length);
+                }
+                user.Avatar = imageData;
+                unit.Users.Add(user);
+                unit.Users.Save();
+                var loginView = new login();
+                loginView.ShowDialog();
+            }
+            else
+            {
+                ErrorMessage = "* Пользователь с таким логином уже существует";
+            }
 
         }
     }

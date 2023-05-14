@@ -180,7 +180,7 @@
                                    FontFamily="Montserrat"
                                    FontSize="12"
                                    VerticalAlignment="Center"/>
-                        <Ellipse Height="35px" Width="35px"
+                        <Ellipse Height="33px" Width="33px"
                                  Stroke="#784DFD"
                                  StrokeThickness="2"
                                  Margin="10 0 10 0">

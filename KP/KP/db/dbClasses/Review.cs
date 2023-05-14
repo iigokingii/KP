@@ -14,6 +14,7 @@ namespace KP.dbClasses
         public byte[]? Avatar { get; set; }
         public string Login { get; set; }
         public string UserReviewText { get; set; }
+        public string Date { get; set; }
 
         public BigItemInfo? bigItemInfo { get; set; }
         public UserProfile? userProfile { get; set; }

@@ -16,7 +16,16 @@ namespace KP.DBMethods.UnitOfWork
         private MiniItemInfoRepository _miniItemInfoRepository;
         private FramesFromMovieRepository _framesFromMovieRepository;
         private BigItemInfoRepository _bigItemInfoRepository;
-
+        private ReviewRepository _reviewRepository;
+        public ReviewRepository ReviewRepository
+        {
+            get
+            {
+                if (_reviewRepository == null)
+                    _reviewRepository = new ReviewRepository();
+                return _reviewRepository;
+            }
+        }
         public BigItemInfoRepository BigItemInfoRepository
         {
             get

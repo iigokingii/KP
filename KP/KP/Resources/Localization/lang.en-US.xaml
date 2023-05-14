@@ -15,7 +15,10 @@
     <v:String x:Key="Password">Password</v:String>
     <v:String x:Key="UserMail">Email</v:String>
     <v:String x:Key="UserComment">Enter a comment:</v:String>
-    
+    <v:String x:Key="UserCommentPublish">Publish a comment</v:String>
+    <v:String x:Key="UsersComment">Users comments</v:String>
+
+
     <v:String x:Key="NavHome">Home</v:String>
     <v:String x:Key="NavSettings">Setting</v:String>
     <v:String x:Key="NavCatalog">Catalog</v:String>

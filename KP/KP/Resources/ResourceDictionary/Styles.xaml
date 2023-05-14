@@ -139,7 +139,7 @@
     <Style x:Key="PosterContainer" TargetType="ListBoxItem">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                
+                <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="BorderThickness" Value="0"/>
             </Trigger>
         </Style.Triggers>
