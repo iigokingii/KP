@@ -372,6 +372,20 @@ namespace KP.ViewModel
                 bigItem.directors = Directors;
                 bigItem.TitleOrig = MovieNameOrig;
                 
+                //добавление фреймов фильма
+                foreach(var ImgFrame in frames)
+                {
+                    FramesFromMovie frame = new FramesFromMovie();
+                    frame.Frame = ImgFrame;
+                    frame.BigItemInfo = bigItem;
+                    unit.FramesFromMovieRepository.Add(frame);
+                    try
+                    {
+                        unit.FramesFromMovieRepository.Save();
+                    }
+                    catch(Exception ex) { }
+                }
+                frames.Clear();
                 unit.MiniItemInfoRepository.Add(item);
                 unit.BigItemInfoRepository.Add(bigItem);
                 MovieNameOrig = "";

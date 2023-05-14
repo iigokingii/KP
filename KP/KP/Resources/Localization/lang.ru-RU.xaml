@@ -13,6 +13,7 @@
     <v:String x:Key="UserName">Логин</v:String>
     <v:String x:Key="Password">Пароль</v:String>
     <v:String x:Key="UserMail">Email</v:String>
+    <v:String x:Key="UserComment">Введите комментарий:</v:String>
 
     <v:String x:Key="NavHome">Главная страница</v:String>
     <v:String x:Key="NavSettings">Настройки</v:String>
@@ -23,21 +24,21 @@
     <v:String x:Key="NavWatchLater">Посмотреть позже</v:String>
     <v:String x:Key="NavAdd">Добавить</v:String>
 
-    <v:String x:Key="movieName">Название</v:String>
-    <v:String x:Key="movieNameOrig">Оригинальное название</v:String>
-    <v:String x:Key="movieGenre">Жанр</v:String>
-    <v:String x:Key="movieYear">Год</v:String>
-    <v:String x:Key="movieCountry">Страна</v:String>
-    <v:String x:Key="movieDescription">Описание</v:String>
-    <v:String x:Key="movieSmallPoster">Добавить постер</v:String>
-    <v:String x:Key="movieRatingIMDb">Рейтинг IMDb</v:String>
-    <v:String x:Key="movieRatingKP">Рейтинг KP</v:String>
-    <v:String x:Key="movieFees">Сборы</v:String>
-    <v:String x:Key="movieDirectors">Режиссеры</v:String>
-    <v:String x:Key="movieActors">Актеры</v:String>
-    
-    <v:String x:Key="movieAddFrame">Добавить кадры из фильма/сериала</v:String>
+    <v:String x:Key="movieName">Название:</v:String>
+    <v:String x:Key="movieNameOrig">Оригинальное название: </v:String>
+    <v:String x:Key="movieGenre">Жанр: </v:String>
+    <v:String x:Key="movieYear">Год: </v:String>
+    <v:String x:Key="movieCountry">Страна: </v:String>
+    <v:String x:Key="movieDescription">Описание: </v:String>
+    <v:String x:Key="movieRatingIMDb">Рейтинг IMDb: </v:String>
+    <v:String x:Key="movieRatingKP">Рейтинг KP: </v:String>
+    <v:String x:Key="movieFees">Сборы: </v:String>
+    <v:String x:Key="movieDirectors">Режиссеры: </v:String>
+    <v:String x:Key="movieActors">Актеры: </v:String>
+    <v:String x:Key="movieFrames">Кадры из фильма/сериала:</v:String>
 
+    <v:String x:Key="movieAddFrame">Добавить кадры из фильма/сериала: </v:String>
+    <v:String x:Key="movieSmallPoster">Добавить постер: </v:String>
     <v:String x:Key="movieAddBut">Добавить данные в БД</v:String>
 
 

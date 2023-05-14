@@ -137,7 +137,7 @@
     </Style>
     <Style x:Key="AccountButtonIconStyle" TargetType="FA:IconImage">
         <Setter Property="Foreground" Value="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=Button}}"/>
-        <Setter Property="Width" Value="16px"/>
+        <Setter Property="Width" Value="12px"/>
         <Setter Property="Height" Value="16px"/>
     </Style>
     
@@ -237,6 +237,7 @@
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Width" Value="20px"/>
         <Setter Property="Height" Value="20px"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
     </Style>
 
 

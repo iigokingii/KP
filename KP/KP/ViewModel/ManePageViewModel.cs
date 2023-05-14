@@ -112,8 +112,8 @@ namespace KP.ViewModel
         private void LoadCurrentUserData()
         {
 
-            Thread.CurrentPrincipal = new GenericPrincipal(
-                   new GenericIdentity("admin"), null);
+            /*Thread.CurrentPrincipal = new GenericPrincipal(
+                   new GenericIdentity("admin"), null);*/
 
             var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
             if (user != null)

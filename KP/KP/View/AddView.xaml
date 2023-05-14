@@ -96,6 +96,9 @@
                                  Width="320px" Height="100"
                                  Style="{StaticResource richTextBlStyle}"
                                  Text="{Binding Description}">
+                            <toolkit:RichTextBox.TextFormatter>
+                                <toolkit:PlainTextFormatter />
+                            </toolkit:RichTextBox.TextFormatter>
                         </toolkit:RichTextBox>
                     </StackPanel>
                 </StackPanel>
@@ -106,6 +109,9 @@
                                  Width="320px" Height="60"
                                  Style="{StaticResource richTextBlStyle}"
                                  Text="{Binding Directors}">
+                            <toolkit:RichTextBox.TextFormatter>
+                                <toolkit:PlainTextFormatter />
+                            </toolkit:RichTextBox.TextFormatter>
                         </toolkit:RichTextBox>
                     </StackPanel>
                 </StackPanel>
@@ -116,6 +122,9 @@
                                  Width="320px" Height="100"
                                  Style="{StaticResource richTextBlStyle}"
                                  Text="{Binding Actors}">
+                            <toolkit:RichTextBox.TextFormatter>
+                                <toolkit:PlainTextFormatter />
+                            </toolkit:RichTextBox.TextFormatter>
                         </toolkit:RichTextBox>
                     </StackPanel>
                 </StackPanel>

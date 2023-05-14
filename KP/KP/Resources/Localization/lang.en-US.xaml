@@ -14,6 +14,7 @@
     <v:String x:Key="UserName">UserName</v:String>
     <v:String x:Key="Password">Password</v:String>
     <v:String x:Key="UserMail">Email</v:String>
+    <v:String x:Key="UserComment">Enter a comment:</v:String>
     
     <v:String x:Key="NavHome">Home</v:String>
     <v:String x:Key="NavSettings">Setting</v:String>
@@ -24,22 +25,21 @@
     <v:String x:Key="NavWatchLater">Watch later</v:String>
     <v:String x:Key="NavAdd">Add</v:String>
 
-    <v:String x:Key="movieName">Title</v:String>
-    <v:String x:Key="movieNameOrig">Origin title</v:String>
-    <v:String x:Key="movieGenre">Genre</v:String>
-    <v:String x:Key="movieYear">Year</v:String>
-    <v:String x:Key="movieCountry">Country</v:String>
-    <v:String x:Key="movieDescription">Description</v:String>
-    <v:String x:Key="movieSmallPoster">Add poster</v:String>
-    
-    <v:String x:Key="movieRatingIMDb">Rating IMDb</v:String>
-    <v:String x:Key="movieRatingKP">Rating KP</v:String>
-    <v:String x:Key="movieFees">Fees</v:String>
-    <v:String x:Key="movieDirectors">Directors</v:String>
-    <v:String x:Key="movieActors">Actors</v:String>
-    
-    <v:String x:Key="movieAddFrame">Add Frames from movie/series</v:String>
-    
+    <v:String x:Key="movieName">Title: </v:String>
+    <v:String x:Key="movieNameOrig">Origin title: </v:String>
+    <v:String x:Key="movieGenre">Genre: </v:String>
+    <v:String x:Key="movieYear">Year: </v:String>
+    <v:String x:Key="movieCountry">Country: </v:String>
+    <v:String x:Key="movieDescription">Description: </v:String>
+    <v:String x:Key="movieRatingIMDb">Rating IMDb: </v:String>
+    <v:String x:Key="movieRatingKP">Rating KP: </v:String>
+    <v:String x:Key="movieFees">Fees: </v:String>
+    <v:String x:Key="movieDirectors">Directors: </v:String>
+    <v:String x:Key="movieActors">Actors:</v:String>
+    <v:String x:Key="movieFrames">Frames from movie/series:</v:String>
+
+    <v:String x:Key="movieSmallPoster">Add poster: </v:String>
+    <v:String x:Key="movieAddFrame">Add Frames from movie/series: </v:String>
     <v:String x:Key="movieAddBut">Add data to DB</v:String>
 
 
