@@ -1,0 +1,210 @@
+﻿<UserControl x:Class="KP.View.LikesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KP.View"
+             xmlns:viewModel="clr-namespace:KP.ViewModel"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:FA="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:LikesViewModel/>
+    </UserControl.DataContext>
+    <Grid Margin="10 0 0 0">
+        <!--  Visibility="{Binding IsVisible}"  {Binding IsVisible}  -->
+        <!--Collapsed-->
+        <ListBox  BorderThickness="0" ItemsSource="{Binding LikedMini}"
+                  Visibility="{Binding IsVisible}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                  Background="gray"
+                  ItemContainerStyle="{StaticResource PosterContainer}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Style="{StaticResource PosterButtnon}" Command="{Binding DataContext.ShowItemCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" CommandParameter="{Binding}">
+                        <StackPanel Orientation="Vertical" Margin="15 10 10 40">
+                            <Image Width="160" Height="200" Source="{Binding Path=SmallIMG}"/>
+                            <TextBlock FontSize="15px" TextWrapping="Wrap" Style="{StaticResource PosterText}" Text="{Binding Path=Name}"/>
+                            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Genre}"/>
+                            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Year}"/>
+                        </StackPanel>
+                    </Button>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <!-- {Binding IsVisibleItem} -->
+        <!--Visible-->
+        <ScrollViewer Visibility="{Binding IsVisibleItem}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="500px"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="310px"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <Image Width="350px" Height="454px" HorizontalAlignment="Left" Source="{Binding BigPoster,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <Grid Margin="20 0 0 0" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.55*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="125px"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieName}"/>
+                        <TextBlock Grid.Row="1" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieNameOrig}"/>
+                        <TextBlock Grid.Row="2" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieYear}"/>
+                        <TextBlock Grid.Row="3" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieGenre}"/>
+                        <TextBlock Grid.Row="4" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieCountry}"/>
+                        <TextBlock Grid.Row="5" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieRatingIMDb}"/>
+                        <TextBlock Grid.Row="6" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieRatingKP}"/>
+                        <TextBlock Grid.Row="7" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieFees}"/>
+                        <TextBlock Grid.Row="8" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieDirectors}"/>
+                        <TextBlock Grid.Row="9" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource movieActors}"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding TitleOrig,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Year,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Genre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Country,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding RatingIMDb,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding RatingKP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Fees,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Directories,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="9" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Actors,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+
+                </Grid>
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Vertical" Margin="0 20 0 0">
+                        <TextBlock FontSize="16px" Style="{StaticResource movieСharacteristics}" Margin="30 0 0 20" Text="{DynamicResource movieDescription}"/>
+                        <TextBlock Style="{StaticResource movieСharacteristicsBind}" LineHeight="25px" FontSize="16" Text="{Binding Description}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <TextBlock FontSize="16px" Style="{StaticResource movieСharacteristics}" Margin="30 0 0 20"  Text="{DynamicResource movieFrames}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Right" Margin="0 0 30 0" Orientation="Vertical" Grid.Column="0">
+                            <StackPanel Width="350" Height="220" Margin="0 0 0 40">
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="{Binding Frame1}"></ImageBrush>
+                                </StackPanel.Background>
+                            </StackPanel>
+                            <StackPanel Width="350" Height="220">
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="{Binding Frame3}"></ImageBrush>
+                                </StackPanel.Background>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Margin="30 0 0 0" Orientation="Vertical" Grid.Column="1">
+                            <StackPanel Width="350" Height="220" Margin="0 0 0 40">
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="{Binding Frame2}"></ImageBrush>
+                                </StackPanel.Background>
+                            </StackPanel>
+                            <StackPanel Width="350" Height="220">
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="{Binding Frame4}"></ImageBrush>
+                                </StackPanel.Background>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Margin="30 50 0 0" Grid.Row="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Margin="0 5 0 0" VerticalAlignment="Top" Grid.Column="0" Style="{StaticResource movieСharacteristics}" Text="{DynamicResource UserComment}"/>
+                        <toolkit:RichTextBox Grid.Row="1"  HorizontalAlignment="Left" Margin="0 10 0 0" CaretBrush="Red"
+                                 Width="320px" Height="100"
+                                 Style="{StaticResource richTextBlStyle}"
+                                 Text="{Binding Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <toolkit:RichTextBox.TextFormatter>
+                                <toolkit:PlainTextFormatter />
+                            </toolkit:RichTextBox.TextFormatter>
+                        </toolkit:RichTextBox>
+                        <Button Style="{StaticResource AddPosterButton}"
+                                HorizontalAlignment="Left"
+                                Width="180px" 
+                                Margin="140 12 0 20"
+                                Content="{DynamicResource UserCommentPublish}"
+                                Command="{Binding AddCommentByUserCommand}"
+                                Grid.Row="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Margin="30" Grid.Row="3">
+                    <TextBlock Text="{DynamicResource UsersComment}" Style="{StaticResource movieСharacteristics}"/>
+                    <ListBox  BorderThickness="0" ItemsSource="{Binding Comments}"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                              Background="Red"
+                              ItemContainerStyle="{StaticResource PosterContainer}"
+                              Width="600"
+                              HorizontalAlignment="Left">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="520px" Background="Gray">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <Ellipse Width="33" Height="33" StrokeThickness="2">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="{Binding Avatar}"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Orientation="Vertical" >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Margin="8 0 0 0" Grid.Column="0" HorizontalAlignment="Left" Text="{Binding Login}"/>
+                                            <TextBlock Margin="0 0 20 0"  Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Date}"/>
+                                        </Grid>
+                                        <TextBlock TextWrapping="Wrap" Margin="8 10 20 10" HorizontalAlignment="Left" Text="{Binding UserReviewText}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

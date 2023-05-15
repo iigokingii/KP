@@ -34,12 +34,5 @@ namespace KP.dbClasses
         public List<Review> reviews { get; set; } = new();
         public int MiniItemInfoId { get; set; }
         public MiniItemInfo? MiniItemInfo { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
     }
 }

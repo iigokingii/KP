@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using KP.db.context;
 using System.Threading;
+using KP.db.dbClasses;
 
 namespace KP.ViewModel
 {
@@ -30,7 +31,8 @@ namespace KP.ViewModel
         Visibility _isVisibleItem = Visibility.Collapsed;
         BigItemInfo _bigItemInfo;
         ObservableCollection<Review> _comments;
-
+        UserProfile user;
+        MiniItemInfo miniItem;
 
         string _title;
         string _titleOrig;
@@ -53,6 +55,11 @@ namespace KP.ViewModel
 
         public ICommand ShowItemCommand { get; }
         public ICommand AddCommentByUserCommand { get; }
+        public ICommand LikeFilmCommand { get; }
+        public ICommand WatchLaterFilmCommand { get; }
+        public ICommand DeleteLikeFilmCommand { get; }
+        public ICommand DeleteWatchLaterFilmCommand { get; }
+
 
         public CatalogViewModel()
         {
@@ -64,11 +71,57 @@ namespace KP.ViewModel
             _comments = new ObservableCollection<Review>();
             ShowItemCommand = new ViewModelCommandBase(ShowItem);
             AddCommentByUserCommand = new ViewModelCommandBase(AddCommentByUser);
+            LikeFilmCommand = new ViewModelCommandBase(LikeFilm);
+            WatchLaterFilmCommand = new ViewModelCommandBase(WatchLaterFilm);
+            DeleteLikeFilmCommand = new ViewModelCommandBase(DeleteLikeFilm);
+            DeleteWatchLaterFilmCommand = new ViewModelCommandBase(DeleteWatchLaterFilm);
         }
+
+        private void DeleteLikeFilm(object obj)
+        {
+            Likes like = new Likes();
+            like.userID = user.ID;
+            like.bigItemInfoID = BigItemInfo.ID;
+            like.miniItemInfoID = miniItem.ID;
+            unit.LikesRepository.Remove(like);
+            unit.Save();
+        }
+
+        private void DeleteWatchLaterFilm(object obj)
+        {
+            WatchLater later = new WatchLater();
+            later.userID = user.ID;
+            later.bigItemInfoID = BigItemInfo.ID;
+            later.miniItemInfoID = miniItem.ID;
+            unit.WatchLaterRepository.Remove(later);
+            unit.Save();
+        }
+
+        //todo
+        private void WatchLaterFilm(object obj)
+        {
+            WatchLater later = new WatchLater();
+            later.userID = user.ID;
+            later.bigItemInfoID = BigItemInfo.ID;
+            later.miniItemInfoID = miniItem.ID;
+            unit.WatchLaterRepository.Add(later);
+            unit.Save();
+        }
+        //todo
+        private void LikeFilm(object obj)
+        {
+            Likes like = new Likes();
+            like.userID = user.ID;
+            like.bigItemInfoID = BigItemInfo.ID;
+            like.miniItemInfoID = miniItem.ID;
+            unit.LikesRepository.Add(like);
+            unit.Save();
+        }
+
         private void AddCommentByUser(object obj)
         {
             Review review = new Review();
-            var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
+            
             review.Avatar = user.Avatar;
             review.bigItemInfo = _bigItemInfo;
             review.Date = DateTime.Now.ToShortDateString();
@@ -82,10 +135,11 @@ namespace KP.ViewModel
         }
         private void ShowItem(object obj)
         {
+            user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
             if (obj is MiniItemInfo)
             {
-                MiniItemInfo temp = (MiniItemInfo)obj;
-                _bigItemInfo = unit.BigItemInfoRepository.GetAll().First(p => p.ID == temp.ID);
+                miniItem = (MiniItemInfo)obj;
+                _bigItemInfo = unit.BigItemInfoRepository.GetAll().First(p => p.ID == miniItem.ID);
                 
             }
             IsVisibleItem = Visibility.Visible;
@@ -96,10 +150,44 @@ namespace KP.ViewModel
 
             Comments = new ObservableCollection<Review>(t.Select(p=>p));
 
+            switch (frames.Count)
+            {
+                case 1: {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        break;
+                    }
+                case 2:
+                    {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        Frame2 = ConvertoBitmapImage(frames[1].Frame);
+                        break;
+                    }
+                case 3:
+                    {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        Frame2 = ConvertoBitmapImage(frames[1].Frame);
+                        Frame3 = ConvertoBitmapImage(frames[2].Frame);
+                        break;
+                    }
+                case 4:
+                    {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        Frame2 = ConvertoBitmapImage(frames[1].Frame);
+                        Frame3 = ConvertoBitmapImage(frames[2].Frame);
+                        Frame4 = ConvertoBitmapImage(frames[3].Frame);
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+
+/*
             Frame1 = ConvertoBitmapImage(frames[0].Frame);
             Frame2 = ConvertoBitmapImage(frames[1].Frame);
             Frame3 = ConvertoBitmapImage(frames[2].Frame);
-            Frame4 = ConvertoBitmapImage(frames[3].Frame);
+            Frame4 = ConvertoBitmapImage(frames[3].Frame);*/
 
             // byte[]->img
             byte[] d = (byte[])_bigItemInfo.BigImg;

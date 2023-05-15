@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\2k2s\KP\KP\KP\App.xaml
-16-1351844767
+171426236135
 
-401428294413
+46-1163771532
 2411985954905
-CustomControls\BindablePasswordBox.xaml;Resources\Localization\lang.en-US.xaml;Resources\Localization\lang.ru-RU.xaml;Resources\ResourceDictionary\Styles.xaml;Resources\Theme\Dark.xaml;Resources\Theme\Light.xaml;View\AddView.xaml;View\CatalogView.xaml;View\FilmsView.xaml;View\HomeView.xaml;View\ItemView.xaml;View\login\login.xaml;View\Main\MainWindow.xaml;View\Registration\RegistrationView.xaml;View\SettingView.xaml;View\UserProfileView.xaml;
+CustomControls\BindablePasswordBox.xaml;Resources\Localization\lang.en-US.xaml;Resources\Localization\lang.ru-RU.xaml;Resources\ResourceDictionary\Styles.xaml;Resources\Theme\Dark.xaml;Resources\Theme\Light.xaml;View\AddView.xaml;View\CatalogView.xaml;View\FilmsView.xaml;View\HomeView.xaml;View\ItemView.xaml;View\LikesView.xaml;View\login\login.xaml;View\Main\MainWindow.xaml;View\Registration\RegistrationView.xaml;View\SettingView.xaml;View\UserProfileView.xaml;
 
-False
+True
 

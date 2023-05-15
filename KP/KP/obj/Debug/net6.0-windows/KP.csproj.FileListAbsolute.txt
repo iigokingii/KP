@@ -110,3 +110,5 @@ D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\SettingView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\SettingView.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\FilmsView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\FilmsView.baml
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\LikesView.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\LikesView.baml

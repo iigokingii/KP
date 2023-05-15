@@ -36,6 +36,9 @@
         <DataTemplate DataType="{x:Type viewModel:FilmsViewModel}">
             <local:FilmsView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:LikesViewModel}">
+            <local:LikesView/>
+        </DataTemplate>
     </Window.Resources>
     
 
@@ -101,7 +104,8 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE">
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowLikedFilmsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="ThumbsUp" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{DynamicResource NavLiked}" Style="{StaticResource menuButtonText}"/>
@@ -114,7 +118,6 @@
                             <FA:IconImage Icon="Clock" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{DynamicResource NavWatchLater}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
-
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="#E285DE"
@@ -124,7 +127,6 @@
                             <TextBlock Text="{DynamicResource NavSettings}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
-                    
                 </StackPanel>
             </Border>
             <Grid Grid.Column="1">

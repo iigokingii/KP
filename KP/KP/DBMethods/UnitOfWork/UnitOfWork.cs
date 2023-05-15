@@ -17,6 +17,26 @@ namespace KP.DBMethods.UnitOfWork
         private FramesFromMovieRepository _framesFromMovieRepository;
         private BigItemInfoRepository _bigItemInfoRepository;
         private ReviewRepository _reviewRepository;
+        private LikesRepository _likesRepository;
+        private WatchLaterRepository _watchLaterRepository;
+        public WatchLaterRepository WatchLaterRepository
+        {
+            get
+            {
+                if (_watchLaterRepository == null)
+                    _watchLaterRepository = new WatchLaterRepository();
+                return _watchLaterRepository;
+            }
+        }
+        public LikesRepository LikesRepository
+        {
+            get
+            {
+                if (_likesRepository == null)
+                    _likesRepository = new LikesRepository();
+                return _likesRepository;
+            }
+        }
         public ReviewRepository ReviewRepository
         {
             get
@@ -69,7 +89,9 @@ namespace KP.DBMethods.UnitOfWork
             Users.Save();
             MiniItemInfoRepository.Save();
             FramesFromMovieRepository.Save();
-
+            ReviewRepository.Save();
+            WatchLaterRepository.Save();
+            LikesRepository.Save();
         }
 
 

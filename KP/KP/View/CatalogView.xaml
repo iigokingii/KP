@@ -97,15 +97,37 @@
                         <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" Text="{Binding Fees,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Directories,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBlock Grid.Row="9" Grid.Column="1" Style="{StaticResource movieСharacteristicsBind}" TextWrapping="Wrap" Text="{Binding Actors,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-
+                        
+                                                     
+                        
                         <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-                            <Button Margin="0 0 0 0" Width="40" Height="40" Style="{StaticResource AccountButton}" Tag="#FF47CA">
+                            <Button Margin="0 0 0 0" Width="40" Height="40" 
+                                    Style="{StaticResource AccountButton}" Tag="#FF47CA"
+                                    Command="{Binding LikeFilmCommand}">
                                 <FA:IconImage Width="25px" Height="25px" Icon="ThumbsUp" Style="{StaticResource AccountButtonIconStyle}"/>
                             </Button>
-                            <Button Style="{StaticResource AccountButton}" Tag="#CCCCFF" Width="40" Height="40">
+                            <Button Style="{StaticResource AccountButton}" 
+                                    Tag="#CCCCFF" Width="40" Height="40"
+                                    Command="{Binding WatchLaterFilmCommand}">
                                 <FA:IconImage Width="25px" Height="25px"  Icon="Bookmark" Style="{StaticResource AccountButtonIconStyle}"/>
                             </Button>
                         </StackPanel>
+                        <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+                            <Button Margin="0 0 0 0" Width="40" Height="40" 
+                                    Style="{StaticResource AccountButton}" Tag="#FF47CA"
+                                    Command="{Binding DeleteLikeFilmCommand}">
+                                <FA:IconImage Width="25px" Height="25px" Icon="HeartCrack" Style="{StaticResource AccountButtonIconStyle}"/>
+                            </Button>
+                            <Button Style="{StaticResource AccountButton}" 
+                                    Tag="#CCCCFF" Width="40" Height="40"
+                                    Command="{Binding DeleteWatchLaterFilmCommand}">
+                                <FA:IconImage Width="25px" Height="25px"  Icon="ClockRotateLeft" Style="{StaticResource AccountButtonIconStyle}"/>
+                            </Button>
+                        </StackPanel>
+                        
+                        
+                        
+                        
                     </Grid>
                     
                 </Grid>

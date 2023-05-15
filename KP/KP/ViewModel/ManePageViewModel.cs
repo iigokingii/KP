@@ -34,7 +34,8 @@ namespace KP.ViewModel
         public ICommand ShowUserProfileCommand { get; }
         public ICommand ShowSettingsCommand { get; }
         public ICommand ShowFilmsCommand { get; }
-
+        public ICommand ShowLikedFilmsCommand { get; }
+        public ICommand ShowWatchLagerFilmsCommand { get; }
 
         public ManePageViewModel()
         {
@@ -46,10 +47,19 @@ namespace KP.ViewModel
             ShowUserProfileCommand = new ViewModelCommandBase(ShowUserProfile);
             ShowSettingsCommand = new ViewModelCommandBase(ShowSettings);
             ShowFilmsCommand = new ViewModelCommandBase(ShowFilms);
-
+            ShowLikedFilmsCommand = new ViewModelCommandBase(ShowLikedFilms);
+           // ShowWatchLagerFilmsCommand = new ViewModelCommandBase(ShowWatchLagerFilms);
             LoadCurrentUserData();
             ShowHome(null);
 
+        }
+
+        private void ShowLikedFilms(object obj)
+        {
+            CaptionOfHeader = "Liked";
+            IconOfHeader = IconChar.ThumbsUp;
+            LikesViewModel.Login = _currentUserProfile.Login;
+            CurrentChildView = new LikesViewModel();
         }
 
         private void ShowFilms(object obj)
@@ -71,9 +81,9 @@ namespace KP.ViewModel
         {
             Thread.CurrentPrincipal = new GenericPrincipal(
                    new GenericIdentity(_currentUserProfile.Login), null);
-            CurrentChildView = new UserProfileViewModel();
             CaptionOfHeader = "Profile";
             IconOfHeader = IconChar.Sliders;
+            CurrentChildView = new UserProfileViewModel();
         }
 
         private void ShowAdd(object obj)
@@ -86,9 +96,10 @@ namespace KP.ViewModel
 
         private void ShowCatalog(object obj)
         {
+           
             CurrentChildView = new CatalogViewModel();
             Thread.CurrentPrincipal = new GenericPrincipal(
-                    new GenericIdentity(_currentUserProfile.Login), null);
+       new GenericIdentity(_currentUserProfile.Login), null);
             CaptionOfHeader = "Catalog";
             IconOfHeader = IconChar.Ticket;
         }

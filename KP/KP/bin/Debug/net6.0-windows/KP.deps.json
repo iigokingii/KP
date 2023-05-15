@@ -10,6 +10,7 @@
         "dependencies": {
           "EntityFramework": "6.4.4",
           "Extended.Wpf.Toolkit": "4.5.0",
+          "FontAwesome": "4.7.0",
           "FontAwesome.Sharp": "6.3.0",
           "FontAwesome.WPF": "4.7.0.9",
           "Microsoft.EntityFrameworkCore": "7.0.5",
@@ -134,6 +135,7 @@
           }
         }
       },
+      "FontAwesome/4.7.0": {},
       "FontAwesome.Sharp/6.3.0": {
         "runtime": {
           "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {
@@ -735,6 +737,13 @@
       "sha512": "sha512-oQP6Qyuz+3kETAC/s+cBEfb8Vzbju6pB7Q5czW4KdkAOpFJTA/SCox8caH6HLQxQ6Lwq2jCeSQOPJKlnpqpFOg==",
       "path": "extended.wpf.toolkit/4.5.0",
       "hashPath": "extended.wpf.toolkit.4.5.0.nupkg.sha512"
+    },
+    "FontAwesome/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
+      "path": "fontawesome/4.7.0",
+      "hashPath": "fontawesome.4.7.0.nupkg.sha512"
     },
     "FontAwesome.Sharp/6.3.0": {
       "type": "package",

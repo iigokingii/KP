@@ -22,7 +22,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryNew}"/>
-                    <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding NewCategory}"
                               Visibility="{Binding IsVisible}"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
@@ -52,7 +52,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryPopular}"/>
-                    <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding PopularCategory}"
                               Visibility="{Binding IsVisible}"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
@@ -81,7 +81,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="2" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryGoKin}"/>
-                    <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
+                    <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding GokinCategory}"
                               Visibility="{Binding IsVisible}"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"

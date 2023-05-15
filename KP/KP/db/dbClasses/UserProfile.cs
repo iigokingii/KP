@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KP.db.dbClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KP.dbClasses
 {
@@ -31,14 +33,7 @@ namespace KP.dbClasses
         public string Password { get; set; }
 
         public List<Review> reviews { get; set; } = new();
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
-
+        public List<Likes> likes { get; set; } = new();
+        public List<WatchLater> watchLater { get; set; } = new();
     }
 }
