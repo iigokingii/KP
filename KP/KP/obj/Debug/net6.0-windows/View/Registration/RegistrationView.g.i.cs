@@ -88,7 +88,7 @@ namespace KP.View.Registration {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KP;component/view/registration/registrationview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KP;V1.0.0.0;component/view/registration/registrationview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\Registration\RegistrationView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

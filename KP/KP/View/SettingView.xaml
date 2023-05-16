@@ -13,14 +13,30 @@
     <StackPanel Width="200px" Height="300" Margin="20">
         <TextBlock HorizontalAlignment="Center" Style="{DynamicResource StUN}" Text="{DynamicResource m_Title}"/>
         <StackPanel Width="120" Orientation="Horizontal">
-            <Button Margin="5" Width="50" Height="35"
+            <Button Style="{DynamicResource LangBut}"
                     Command="{Binding SwitchLangToRuCommand}">
                 <Button.Background>
                     <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\langs\RU.png"/>
                 </Button.Background>
             </Button>
-            <Button Margin="5" Width="50" Height="35"
+            <Button Style="{DynamicResource LangBut}"
                     Command="{Binding SwitchLangToEnCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\langs\EN.png"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center" Text="{DynamicResource Theme}" Style="{DynamicResource StUN}"/>
+        <StackPanel Width="120" Orientation="Horizontal">
+            <Button Style="{DynamicResource LangBut}"
+                    
+                    BorderBrush="Gray"
+                    BorderThickness="3">
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\icons\Theme.png"/>
+                </Button.Background>
+            </Button>
+            <Button Style="{DynamicResource LangBut}">
                 <Button.Background>
                     <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\langs\EN.png"/>
                 </Button.Background>

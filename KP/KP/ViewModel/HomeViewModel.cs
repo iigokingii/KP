@@ -15,18 +15,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows;
 using System.Data.Entity;
+using KP.db.dbClasses;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace KP.ViewModel
 {
     internal class HomeViewModel : ViewModelBase
     {
+        public static string Login;
         UnitOfWork unit;
         DbAppContext db = new DbAppContext();
         private ObservableCollection<MiniItemInfo> _miniItemInfos;
-
+        UserProfile user;
         private ObservableCollection<MiniItemInfo> _newCategory;
         private ObservableCollection<MiniItemInfo> _popularCategory;
         private ObservableCollection<MiniItemInfo> _GokinCategory;
+
+        SolidColorBrush _foregraundOfLike;
+        SolidColorBrush _foregraundOfDislike;
+        SolidColorBrush _foregraundOfWatchLater;
+        SolidColorBrush _foregraundOfDeleteFromWatchLater;
+        SolidColorBrush _roz = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0x47, 0xCA));
+        SolidColorBrush _default = new SolidColorBrush(Color.FromArgb(0xFF, 0x94, 0x97, 0xCD));
+        MiniItemInfo miniItem;
+
 
 
 
@@ -57,12 +69,24 @@ namespace KP.ViewModel
 
         public ICommand ShowItemCommand { get; }
         public ICommand AddCommentByUserCommand { get; }
+        public ICommand LikeFilmCommand { get; }
+        public ICommand WatchLaterFilmCommand { get; }
+        public ICommand DeleteLikeFilmCommand { get; }
+        public ICommand DeleteWatchLaterFilmCommand { get; }
 
         public HomeViewModel()
         {
 
             unit = new UnitOfWork();
+            ForegraundOfLike = _default;
+            ForegraundOfDislike = _default;
+            ForegraundOfDeleteFromWatchLater = _default;
+            ForegraundOfWatchLater = _default;
             var t = unit.MiniItemInfoRepository.GetAll();
+            LikeFilmCommand = new ViewModelCommandBase(LikeFilm);
+            WatchLaterFilmCommand = new ViewModelCommandBase(WatchLaterFilm);
+            DeleteLikeFilmCommand = new ViewModelCommandBase(DeleteLikeFilm);
+            DeleteWatchLaterFilmCommand = new ViewModelCommandBase(DeleteWatchLaterFilm);
             if (t != null)
             {
                 _miniItemInfos = new ObservableCollection<MiniItemInfo>(t.Select(p => p));
@@ -70,10 +94,80 @@ namespace KP.ViewModel
                 _popularCategory = new ObservableCollection<MiniItemInfo>(t.Take(6).Select(p => p));
                 _GokinCategory = new ObservableCollection<MiniItemInfo>(t.OrderByDescending(p => p.Year).Take(6).Select(p => p));
             }
-                
+            user = unit.Users.GetByLogin(Login);
             _comments = new ObservableCollection<Review>();
             ShowItemCommand = new ViewModelCommandBase(ShowItem);
             AddCommentByUserCommand = new ViewModelCommandBase(AddCommentByUser);
+        }
+        private void DeleteLikeFilm(object obj)
+        {
+            if (ForegraundOfDislike == _default)
+            {
+                ForegraundOfDislike = _roz;
+                ForegraundOfLike = _default;
+            }
+            else
+                ForegraundOfDislike = _default;
+
+            Likes like = new Likes();
+            like.userID = user.ID;
+            like.bigItemInfoID = BigItemInfo.ID;
+            like.miniItemInfoID = miniItem.ID;
+            unit.LikesRepository.Remove(like);
+            unit.Save();
+        }
+
+        private void DeleteWatchLaterFilm(object obj)
+        {
+            if (ForegraundOfDeleteFromWatchLater == _default)
+            {
+                ForegraundOfDeleteFromWatchLater = _roz;
+                ForegraundOfWatchLater = _default;
+            }
+            else
+                ForegraundOfWatchLater = _default;
+            WatchLater later = new WatchLater();
+            later.userID = user.ID;
+            later.bigItemInfoID = BigItemInfo.ID;
+            later.miniItemInfoID = miniItem.ID;
+            unit.WatchLaterRepository.Remove(later);
+            unit.Save();
+        }
+
+        //todo
+        private void WatchLaterFilm(object obj)
+        {
+            if (ForegraundOfWatchLater == _default)
+            {
+                ForegraundOfWatchLater = _roz;
+                ForegraundOfDeleteFromWatchLater = _default;
+            }
+            else
+                ForegraundOfWatchLater = _default;
+            WatchLater later = new WatchLater();
+            later.userID = user.ID;
+            later.bigItemInfoID = BigItemInfo.ID;
+            later.miniItemInfoID = miniItem.ID;
+            unit.WatchLaterRepository.Add(later);
+            unit.Save();
+        }
+        //todo
+        private void LikeFilm(object obj)
+        {
+            if (ForegraundOfLike == _default)
+            {
+                ForegraundOfLike = _roz;
+                ForegraundOfDislike = _default;
+            }
+            else
+                ForegraundOfLike = _default;
+
+            Likes like = new Likes();
+            like.userID = user.ID;
+            like.bigItemInfoID = BigItemInfo.ID;
+            like.miniItemInfoID = miniItem.ID;
+            unit.LikesRepository.Add(like);
+            unit.Save();
         }
         private void AddCommentByUser(object obj)
         {
@@ -94,9 +188,8 @@ namespace KP.ViewModel
         {
             if (obj is MiniItemInfo)
             {
-                MiniItemInfo temp = (MiniItemInfo)obj;
-                _bigItemInfo = unit.BigItemInfoRepository.GetAll().First(p => p.ID == temp.ID);
-
+                miniItem = (MiniItemInfo)obj;
+                _bigItemInfo = unit.BigItemInfoRepository.GetAll().First(p => p.ID == miniItem.ID);
             }
             IsVisibleItem = Visibility.Visible;
             IsVisible = Visibility.Collapsed;
@@ -106,10 +199,39 @@ namespace KP.ViewModel
 
             Comments = new ObservableCollection<Review>(t.Select(p => p));
 
-            Frame1 = ConvertoBitmapImage(frames[0].Frame);
-            Frame2 = ConvertoBitmapImage(frames[1].Frame);
-            Frame3 = ConvertoBitmapImage(frames[2].Frame);
-            Frame4 = ConvertoBitmapImage(frames[3].Frame);
+            switch (frames.Count)
+            {
+                case 1:
+                    {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        break;
+                    }
+                case 2:
+                    {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        Frame2 = ConvertoBitmapImage(frames[1].Frame);
+                        break;
+                    }
+                case 3:
+                    {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        Frame2 = ConvertoBitmapImage(frames[1].Frame);
+                        Frame3 = ConvertoBitmapImage(frames[2].Frame);
+                        break;
+                    }
+                case 4:
+                    {
+                        Frame1 = ConvertoBitmapImage(frames[0].Frame);
+                        Frame2 = ConvertoBitmapImage(frames[1].Frame);
+                        Frame3 = ConvertoBitmapImage(frames[2].Frame);
+                        Frame4 = ConvertoBitmapImage(frames[3].Frame);
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
 
             // byte[]->img
             byte[] d = (byte[])_bigItemInfo.BigImg;
@@ -138,7 +260,54 @@ namespace KP.ViewModel
             string tsda = "";
 
         }
-
+        public SolidColorBrush ForegraundOfLike
+        {
+            get
+            {
+                return _foregraundOfLike;
+            }
+            set
+            {
+                _foregraundOfLike = value;
+                OnPropertyChanged("ForegraundOfLike");
+            }
+        }
+        public SolidColorBrush ForegraundOfDislike
+        {
+            get
+            {
+                return _foregraundOfDislike;
+            }
+            set
+            {
+                _foregraundOfDislike = value;
+                OnPropertyChanged("ForegraundOfDislike");
+            }
+        }
+        public SolidColorBrush ForegraundOfWatchLater
+        {
+            get
+            {
+                return _foregraundOfWatchLater;
+            }
+            set
+            {
+                _foregraundOfWatchLater = value;
+                OnPropertyChanged("ForegraundOfWatchLater");
+            }
+        }
+        public SolidColorBrush ForegraundOfDeleteFromWatchLater
+        {
+            get
+            {
+                return _foregraundOfDeleteFromWatchLater;
+            }
+            set
+            {
+                _foregraundOfDeleteFromWatchLater = value;
+                OnPropertyChanged("ForegraundOfDeleteFromWatchLater");
+            }
+        }
         private ImageSource ConvertoBitmapImage(byte[]? frame)
         {
             MemoryStream stream = new MemoryStream(frame);

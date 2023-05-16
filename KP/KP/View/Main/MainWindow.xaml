@@ -39,11 +39,10 @@
         <DataTemplate DataType="{x:Type viewModel:LikesViewModel}">
             <local:LikesView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:WatchLaterViewModel}">
+            <local:WatchLaterView/>
+        </DataTemplate>
     </Window.Resources>
-    
-
-
-
     <Border CornerRadius="10" Opacity="1" BorderThickness="3" Style="{DynamicResource LoginStyle}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -113,7 +112,8 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE">
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowWatchLagerFilmsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Clock" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{DynamicResource NavWatchLater}" Style="{StaticResource menuButtonText}"/>

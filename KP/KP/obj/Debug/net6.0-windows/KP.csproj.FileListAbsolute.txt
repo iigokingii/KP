@@ -75,7 +75,6 @@ D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\CustomControls\BindablePasswordBox.g.c
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\AddView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\CatalogView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\HomeView.g.cs
-D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\ItemView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\login\login.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Main\MainWindow.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Registration\RegistrationView.g.cs
@@ -89,7 +88,6 @@ D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\Resources\ResourceDictionary\Styles.ba
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\AddView.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\CatalogView.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\HomeView.baml
-D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\ItemView.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\login\login.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Main\MainWindow.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\Registration\RegistrationView.baml
@@ -112,3 +110,5 @@ D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\FilmsView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\FilmsView.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\LikesView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\LikesView.baml
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\WatchLaterView.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\WatchLaterView.baml

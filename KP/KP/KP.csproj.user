@@ -22,9 +22,6 @@
     <Compile Update="View\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ItemView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\LikesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -38,6 +35,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\UserProfileView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\WatchLaterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -55,9 +55,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\HomeView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\ItemView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LikesView.xaml">
@@ -91,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\UserProfileView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\WatchLaterView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

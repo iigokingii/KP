@@ -25,6 +25,8 @@ namespace KP.ViewModel
     internal class CatalogViewModel:ViewModelBase
     {
         UnitOfWork unit;
+        
+
         DbAppContext db = new DbAppContext();
         private ObservableCollection<MiniItemInfo> _miniItemInfos;
         Visibility _isVisible = Visibility.Visible;
@@ -33,6 +35,15 @@ namespace KP.ViewModel
         ObservableCollection<Review> _comments;
         UserProfile user;
         MiniItemInfo miniItem;
+
+
+        SolidColorBrush _foregraundOfLike;
+        SolidColorBrush _foregraundOfDislike;
+        SolidColorBrush _foregraundOfWatchLater;
+        SolidColorBrush _foregraundOfDeleteFromWatchLater;
+        SolidColorBrush _roz = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0x47, 0xCA));
+        SolidColorBrush _default = new SolidColorBrush(Color.FromArgb(0xFF, 0x94, 0x97, 0xCD));
+
 
         string _title;
         string _titleOrig;
@@ -63,8 +74,11 @@ namespace KP.ViewModel
 
         public CatalogViewModel()
         {
-            
             unit = new UnitOfWork();
+            ForegraundOfLike = _default;
+            ForegraundOfDislike=_default;
+            ForegraundOfDeleteFromWatchLater=_default;
+            ForegraundOfWatchLater = _default;
             var t = unit.MiniItemInfoRepository.GetAll();
             if (t != null)
                 _miniItemInfos = new ObservableCollection<MiniItemInfo>(t.Select(p => p));
@@ -79,6 +93,14 @@ namespace KP.ViewModel
 
         private void DeleteLikeFilm(object obj)
         {
+            if (ForegraundOfDislike == _default)
+            {
+                ForegraundOfDislike = _roz;
+                ForegraundOfLike = _default;
+            }
+            else
+                ForegraundOfDislike = _default;
+
             Likes like = new Likes();
             like.userID = user.ID;
             like.bigItemInfoID = BigItemInfo.ID;
@@ -89,6 +111,13 @@ namespace KP.ViewModel
 
         private void DeleteWatchLaterFilm(object obj)
         {
+            if (ForegraundOfDeleteFromWatchLater == _default)
+            {
+                ForegraundOfDeleteFromWatchLater = _roz;
+                ForegraundOfWatchLater = _default;
+            }
+            else
+                ForegraundOfWatchLater = _default;
             WatchLater later = new WatchLater();
             later.userID = user.ID;
             later.bigItemInfoID = BigItemInfo.ID;
@@ -100,6 +129,13 @@ namespace KP.ViewModel
         //todo
         private void WatchLaterFilm(object obj)
         {
+            if (ForegraundOfWatchLater == _default)
+            {
+                ForegraundOfWatchLater = _roz;
+                ForegraundOfDeleteFromWatchLater = _default;
+            }
+            else
+                ForegraundOfWatchLater = _default;
             WatchLater later = new WatchLater();
             later.userID = user.ID;
             later.bigItemInfoID = BigItemInfo.ID;
@@ -110,6 +146,14 @@ namespace KP.ViewModel
         //todo
         private void LikeFilm(object obj)
         {
+            if (ForegraundOfLike == _default)
+            {
+                ForegraundOfLike = _roz;
+                ForegraundOfDislike = _default;
+            }
+            else
+                ForegraundOfLike = _default;
+
             Likes like = new Likes();
             like.userID = user.ID;
             like.bigItemInfoID = BigItemInfo.ID;
@@ -239,6 +283,55 @@ namespace KP.ViewModel
                 OnPropertyChanged("Frame4");
             }
         }
+        public SolidColorBrush ForegraundOfLike
+        {
+            get
+            {
+                return _foregraundOfLike;
+            }
+            set
+            {
+                _foregraundOfLike = value;
+                OnPropertyChanged("ForegraundOfLike");
+            }
+        }
+        public SolidColorBrush ForegraundOfDislike
+        {
+            get
+            {
+                return _foregraundOfDislike;
+            }
+            set
+            {
+                _foregraundOfDislike = value;
+                OnPropertyChanged("ForegraundOfDislike");
+            }
+        }
+        public SolidColorBrush ForegraundOfWatchLater
+        {
+            get
+            {
+                return _foregraundOfWatchLater;
+            }
+            set
+            {
+                _foregraundOfWatchLater = value;
+                OnPropertyChanged("ForegraundOfWatchLater");
+            }
+        }
+        public SolidColorBrush ForegraundOfDeleteFromWatchLater
+        {
+            get
+            {
+                return _foregraundOfDeleteFromWatchLater;
+            }
+            set
+            {
+                _foregraundOfDeleteFromWatchLater = value;
+                OnPropertyChanged("ForegraundOfDeleteFromWatchLater");
+            }
+        }
+
         public ImageSource Frame3
         {
             get

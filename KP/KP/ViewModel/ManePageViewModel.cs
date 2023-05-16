@@ -36,7 +36,6 @@ namespace KP.ViewModel
         public ICommand ShowFilmsCommand { get; }
         public ICommand ShowLikedFilmsCommand { get; }
         public ICommand ShowWatchLagerFilmsCommand { get; }
-
         public ManePageViewModel()
         {
             unit = new UnitOfWork();
@@ -48,10 +47,17 @@ namespace KP.ViewModel
             ShowSettingsCommand = new ViewModelCommandBase(ShowSettings);
             ShowFilmsCommand = new ViewModelCommandBase(ShowFilms);
             ShowLikedFilmsCommand = new ViewModelCommandBase(ShowLikedFilms);
-           // ShowWatchLagerFilmsCommand = new ViewModelCommandBase(ShowWatchLagerFilms);
+            ShowWatchLagerFilmsCommand = new ViewModelCommandBase(ShowWatchLagerFilms);
             LoadCurrentUserData();
             ShowHome(null);
+        }
 
+        private void ShowWatchLagerFilms(object obj)
+        {
+            CaptionOfHeader = "WatchLater";
+            IconOfHeader = IconChar.Clock;
+            WatchLaterViewModel.Login = _currentUserProfile.Login;
+            CurrentChildView = new WatchLaterViewModel();
         }
 
         private void ShowLikedFilms(object obj)
@@ -64,6 +70,7 @@ namespace KP.ViewModel
 
         private void ShowFilms(object obj)
         {
+            FilmsViewModel.Login = _currentUserProfile.Login;
             CurrentChildView = new FilmsViewModel();
             CaptionOfHeader = "Films";
             IconOfHeader = IconChar.Film;
@@ -106,6 +113,7 @@ namespace KP.ViewModel
 
         private void ShowHome(object obj)
         {
+            HomeViewModel.Login = CurrentUserProfile.Login;
             CurrentChildView = new HomeViewModel();
             CaptionOfHeader = "Home";
             IconOfHeader = IconChar.Home;

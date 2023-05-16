@@ -60,7 +60,7 @@ namespace KP {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/KP;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KP;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

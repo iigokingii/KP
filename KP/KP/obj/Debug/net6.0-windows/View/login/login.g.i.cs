@@ -80,7 +80,7 @@ namespace KP.View.login {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KP;component/view/login/login.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KP;V1.0.0.0;component/view/login/login.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\login\login.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

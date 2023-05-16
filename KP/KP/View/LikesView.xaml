@@ -13,14 +13,13 @@
         <viewModel:LikesViewModel/>
     </UserControl.DataContext>
     <Grid Margin="10 0 0 0">
-        <!--  Visibility="{Binding IsVisible}"  {Binding IsVisible}  -->
-        <!--Collapsed-->
         <ListBox  BorderThickness="0" ItemsSource="{Binding LikedMini}"
                   Visibility="{Binding IsVisible}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                  Background="gray"
+                  Background="Transparent"
                   ItemContainerStyle="{StaticResource PosterContainer}">
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Button Style="{StaticResource PosterButtnon}" Command="{Binding DataContext.ShowItemCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" CommandParameter="{Binding}">
@@ -39,8 +38,6 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <!-- {Binding IsVisibleItem} -->
-        <!--Visible-->
         <ScrollViewer Visibility="{Binding IsVisibleItem}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
