@@ -85,13 +85,13 @@ namespace KP.DBMethods.UnitOfWork
 
         public void Save()
         {
-            BigItemInfoRepository.Save();
-            Users.Save();
-            MiniItemInfoRepository.Save();
             FramesFromMovieRepository.Save();
-            ReviewRepository.Save();
             WatchLaterRepository.Save();
             LikesRepository.Save();
+            MiniItemInfoRepository.Save();
+            ReviewRepository.Save();
+            BigItemInfoRepository.Save();
+            Users.Save();
         }
 
 

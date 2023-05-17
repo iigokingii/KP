@@ -32,7 +32,6 @@ namespace KP.dbClasses
 
         public List<FramesFromMovie> framesFromMovies { get; set; } = new();
         public List<Review> reviews { get; set; } = new();
-        public int MiniItemInfoId { get; set; }
         public MiniItemInfo? MiniItemInfo { get; set; }
     }
 }

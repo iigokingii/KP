@@ -20,6 +20,7 @@ namespace KP.dbClasses
         public string Year { get; set; }
         public byte[]? SmallIMG { get; set; }
 
+        public int? BigItemInfoID { get; set; }
         public BigItemInfo? BigItemInfo { get; set; }
     }
 }

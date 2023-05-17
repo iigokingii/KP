@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KP.View.Registration"
+        xmlns:FA="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:viewModel="clr-namespace:KP.ViewModel.Registration"
         xmlns:customcontrols="clr-namespace:KP.CustomControls"
         mc:Ignorable="d"
@@ -46,13 +47,14 @@
                     <Button x:Name="BtnClose" Content="x" Grid.Column="2" Style="{DynamicResource CButton}" Background="#DA34EA" Click="BtnClose_Click"/>
                 </Grid>
                 <StackPanel Grid.Row="1" Width="250" Orientation="Vertical" Margin="0,35,0,0">
-                    <Image Source="D:\2k2s\KP\KP\KP\images\Logo\Logo3.2.png" Width="100" Height="100"/>
-                    <TextBlock Style="{DynamicResource TextSt}">GoKin</TextBlock>
-                    <TextBlock Style="{DynamicResource StDev}" Text="{DynamicResource tagline}"></TextBlock>
+                    <Image Source="D:\2k2s\KP\KP\KP\images\Logo\test4.png" Width="140" Height="140"/>
+                    <!--<TextBlock Style="{DynamicResource TextSt}">GoKin</TextBlock>-->
+                    <TextBlock Style="{DynamicResource StDev}" Text="{DynamicResource tagline}" Margin="0 -5 0 0"></TextBlock>
                     <StackPanel Margin="16 0 0 0">
                         <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource UserName}"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="D:\2k2s\KP\KP\KP\images\icons\user.png" Width="16px"></Image>
+                            <!--<Image Source="D:\2k2s\KP\KP\KP\images\icons\user.png" Width="16px"></Image>-->
+                            <FA:IconImage Icon="UserAlt" Width="16" Foreground="LightGray"></FA:IconImage>
                             <TextBox CaretBrush="Red" Margin="5 0 0 0" x:Name="UserName" 
                                      Width="206px" Style="{DynamicResource StInp}" Text="{Binding Username ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         </StackPanel>
@@ -60,7 +62,8 @@
                     <StackPanel Margin="16 0 0 0">
                         <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource UserMail}"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="D:\2k2s\KP\KP\KP\images\icons\arroba.png" Width="16px"></Image>
+                            <!--<Image Source="D:\2k2s\KP\KP\KP\images\icons\arroba.png" Width="16px"></Image>-->
+                            <FA:IconImage Icon="At" Width="16" Foreground="LightGray"/>
                             <TextBox CaretBrush="Red" Margin="5 0 0 0" x:Name="UserMail" 
                                      Width="206px" Style="{DynamicResource StInp}" Text="{Binding UserMail,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         </StackPanel>
@@ -68,7 +71,8 @@
                     <StackPanel Margin="16 0 0 0">
                         <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource Password}"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="D:\2k2s\KP\KP\KP\images\icons\lock.png" Width="16px"></Image>
+                            <!--<Image Source="D:\2k2s\KP\KP\KP\images\icons\lock.png" Width="16px"></Image>-->
+                            <FA:IconImage Icon="Lock" Width="14" Foreground="LightGray"/>
                             <customcontrols:BindablePasswordBox Password="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
 

@@ -22,11 +22,9 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryFantasy}"/>
-                    <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding FantasyCategory}"
                               Visibility="{Binding IsVisible}"
-                              ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                              ScrollViewer.VerticalScrollBarVisibility="Disabled"
                               Background="Transparent"
                               ItemContainerStyle="{StaticResource PosterContainer}">
                             <ListBox.ItemTemplate>
@@ -52,7 +50,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryDetectives}"/>
-                    <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding DetectiveCategory}"
                               Visibility="{Binding IsVisible}"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
@@ -81,7 +79,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="2" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryActions}"/>
-                    <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
+                    <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding ActionCategory}"
                               Visibility="{Binding IsVisible}"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"

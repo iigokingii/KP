@@ -172,7 +172,7 @@ namespace KP.ViewModel
         private void AddCommentByUser(object obj)
         {
             Review review = new Review();
-            var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
+            var user = unit.Users.GetByLogin(Login);
             review.Avatar = user.Avatar;
             review.bigItemInfo = _bigItemInfo;
             review.Date = DateTime.Now.ToShortDateString();

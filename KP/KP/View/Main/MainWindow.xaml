@@ -42,6 +42,9 @@
         <DataTemplate DataType="{x:Type viewModel:WatchLaterViewModel}">
             <local:WatchLaterView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:AllFilmsViewModel}">
+            <local:AllFilmsView/>
+        </DataTemplate>
     </Window.Resources>
     <Border CornerRadius="10" Opacity="1" BorderThickness="3" Style="{DynamicResource LoginStyle}">
         <Grid>
@@ -52,10 +55,10 @@
             <Border Style="{StaticResource navigationStyle}">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal"
-                                Height="45"
-                                Margin="15 25 0 40">
-                        <Image Source="D:\2k2s\KP\KP\KP\images\Logo\Logo3.2.png" Width="60" Height="40"/>
-                        <TextBlock Margin="-5 0 0 0" FontSize="20px" VerticalAlignment="Center" Style="{DynamicResource TextSt}">GoKin</TextBlock>
+                                Height="70"
+                                Margin="15 25 0 10">
+                        <Image Source="D:\2k2s\KP\KP\KP\images\Logo\test6.png" Width="80" Height="80"/>
+                        <!--<TextBlock Margin="-5 0 0 0" FontSize="20px" VerticalAlignment="Center" Style="{DynamicResource TextSt}">GoKin</TextBlock>-->
                     </StackPanel>
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="#E285DE"
@@ -90,6 +93,15 @@
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Home" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{DynamicResource NavCatalogSeries}" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+
+                    </RadioButton>
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Tag="#E285DE"
+                                 Command="{Binding ShowAllFilmsCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <FA:IconImage Icon="Database" Style="{StaticResource menuButtonIconStyle}"/>
+                            <TextBlock Text="{DynamicResource NavDB}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>

@@ -16,7 +16,10 @@ namespace KP.dbClasses
         public string UserReviewText { get; set; }
         public string Date { get; set; }
 
+        public int? bigItemInfoID { get; set; }
         public BigItemInfo? bigItemInfo { get; set; }
+        public int? userProfileID { get; set; }
+
         public UserProfile? userProfile { get; set; }
     }
 }

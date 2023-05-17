@@ -13,6 +13,7 @@ namespace KP.dbClasses
         public int ID { get; set; }
         public byte[]? Frame { get; set; }
 
+        public int? BigItemInfoID { get; set; }
         public BigItemInfo? BigItemInfo { get; set; }
     }
 }

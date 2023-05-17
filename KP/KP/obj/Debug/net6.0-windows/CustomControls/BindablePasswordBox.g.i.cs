@@ -62,7 +62,7 @@ namespace KP.CustomControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KP;V1.0.0.0;component/customcontrols/bindablepasswordbox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KP;component/customcontrols/bindablepasswordbox.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\CustomControls\BindablePasswordBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

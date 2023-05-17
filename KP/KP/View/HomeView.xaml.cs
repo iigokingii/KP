@@ -24,5 +24,10 @@ namespace KP.View
         {
             InitializeComponent();
         }
+
+        private void ListBox_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            scrollViewer.ScrollToVerticalOffset(scrollViewer.VerticalOffset - e.Delta / 3);
+        }
     }
 }

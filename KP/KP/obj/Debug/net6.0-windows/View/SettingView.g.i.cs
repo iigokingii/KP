@@ -55,7 +55,7 @@ namespace KP.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KP;V1.0.0.0;component/view/settingview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KP;component/view/settingview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\SettingView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

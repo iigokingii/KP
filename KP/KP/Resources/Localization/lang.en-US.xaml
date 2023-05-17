@@ -31,9 +31,11 @@
     <v:String x:Key="NavLiked">Liked</v:String>
     <v:String x:Key="NavWatchLater">Watch later</v:String>
     <v:String x:Key="NavAdd">Add</v:String>
+    <v:String x:Key="NavDB">Database</v:String>
 
     <v:String x:Key="movieName">Title: </v:String>
     <v:String x:Key="movieNameOrig">Origin title: </v:String>
+    <v:String x:Key="movieBigPoster">Main poster :</v:String>
     <v:String x:Key="movieGenre">Genre: </v:String>
     <v:String x:Key="movieYear">Year: </v:String>
     <v:String x:Key="movieCountry">Country: </v:String>
@@ -50,6 +52,10 @@
     <v:String x:Key="movieAddBut">Add data to DB</v:String>
 
     <v:String x:Key="Search">Search</v:String>
+
+    <v:String x:Key="SearchByIdDB">Enter Film's/Series ID:</v:String>
+    <v:String x:Key="ButtonUpdateDB">Update</v:String>
+    <v:String x:Key="ButtonDeleteFromDB">Delete</v:String>
 
     <v:String x:Key="CategoryPopular">Popular:</v:String>
     <v:String x:Key="CategoryNew">New:</v:String>

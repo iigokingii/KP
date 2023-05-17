@@ -27,7 +27,27 @@ namespace KP.DBMethods.Repositories
         }
         public void Edit(BigItemInfo user)
         {
-            throw new NotImplementedException();
+            BigItemInfo itemInfo= db.bigItemInfoInfos.ToList().ElementAt(user.ID-1);
+            db.bigItemInfoInfos.Remove(user);
+            itemInfo.ID=user.ID;
+            itemInfo.Title = user.Title;
+            itemInfo.TitleOrig = user.TitleOrig;
+            itemInfo.BigImg = user.BigImg;
+            itemInfo.actors = user.actors;
+            itemInfo.Country = user.Country;
+            itemInfo.fees = user.fees;
+            itemInfo.Description = user.Description;
+            itemInfo.directors= user.directors;
+            itemInfo.framesFromMovies = user.framesFromMovies;
+            itemInfo.Genre = user.Genre;
+            itemInfo.MiniItemInfo = user.MiniItemInfo;
+            //itemInfo.MiniItemInfoId = user.MiniItemInfoId;
+            itemInfo.Year = user.Year;
+            itemInfo.reviews = user.reviews;
+            itemInfo.ratingKP = user.ratingKP;
+            itemInfo.ratingIMDb = user.ratingIMDb;
+            db.bigItemInfoInfos.Add(itemInfo);
+            
         }
 
         public IEnumerable<BigItemInfo> GetAll()
@@ -47,12 +67,17 @@ namespace KP.DBMethods.Repositories
 
         public void Remove(BigItemInfo user)
         {
-            db.Remove(user);
+            db.bigItemInfoInfos.Remove(user);
         }
 
         public void Save()
         {
-            db.SaveChanges();
+           /* try
+            {*/
+                db.SaveChanges();
+            //}
+            /*catch(Exception ex) { }*/
+            
         }
 
 
