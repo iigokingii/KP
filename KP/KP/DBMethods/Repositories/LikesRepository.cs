@@ -84,7 +84,11 @@ namespace KP.DBMethods.Repositories
 
         public void Save()
         {
-            db.SaveChanges();
+           /* try
+            {*/
+                db.SaveChanges();
+           /* }
+            catch (Exception ex) { }*/
         }
     }
 }

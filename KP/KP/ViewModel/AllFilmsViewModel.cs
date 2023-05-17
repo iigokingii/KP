@@ -1,4 +1,5 @@
 ﻿using KP.db.context;
+using KP.db.dbClasses;
 using KP.dbClasses;
 using KP.DBMethods.UnitOfWork;
 using KP.ViewModel.BaseModels;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
 
@@ -98,11 +100,114 @@ namespace KP.ViewModel
 
 
         }
-
+        //todo
         private void UpdateMovieInDB(object obj)
         {
+            unit.Save();
+            MiniItemInfo mini = unit.MiniItemInfoRepository.GetAll().FirstOrDefault(p=>p.BigItemInfoID==_id);
+            if (mini != null)
+            {
+                BigItemInfo bi = Items.FirstOrDefault(p=>p.ID==_id);
+                unit.MiniItemInfoRepository.Remove(mini);
+                mini.BigItemInfo = bi;
+                mini.SmallIMG = bi.BigImg;
+                mini.Name = bi.Title;
+                mini.Year = bi.Year;
+                mini.Genre = bi.Genre;
+                mini.ID = bi.ID;
+                unit.MiniItemInfoRepository.Add(mini);
+                unit.Save();
+            }
+            /*BigItemInfo temp = unit.BigItemInfoRepository.GetById((int)_id);
+            BigItemInfo newItem = Items.FirstOrDefault(p=>p.ID==_id);
+            if (temp != null)
+            {
 
-            BigItemInfo temp = Items.FirstOrDefault(p => p.ID == ID);
+                Items.Remove(temp);
+                unit.BigItemInfoRepository.Remove(temp);
+
+                List<FramesFromMovie> frames = unit.FramesFromMovieRepository.GetAll()
+                                                                            .ToList()
+                                                                            .Where(ts => ts.BigItemInfoID == temp.ID)
+                                                                            .Select(p => p)
+                                                                            .ToList();
+                for (int i = 0; i < frames.Count(); i++)
+                {
+                    unit.FramesFromMovieRepository.Remove(frames[i]);
+                    FramesFromMovie frame = new FramesFromMovie();
+                    frame.BigItemInfo = newItem;
+                    frame.Frame = frames[i].Frame;
+                    frame.ID = frames[i].ID;
+                    unit.FramesFromMovieRepository.Add(frame);
+                }
+
+                MiniItemInfo mini = unit.MiniItemInfoRepository.GetAll().FirstOrDefault(p => p.BigItemInfoID == temp.ID);
+                unit.MiniItemInfoRepository.Remove(mini);
+                mini.BigItemInfo = newItem;
+                unit.MiniItemInfoRepository.Add(mini);
+
+                List<Review> reviews = unit.ReviewRepository.GetAll()
+                                                    .ToList()
+                                                    .Where(p => p.bigItemInfoID == temp.ID)
+                                                    .Select(p => p)
+                                                    .ToList();
+                for (int i = 0; i < reviews.Count(); i++)
+                {
+                    
+                    
+                    unit.ReviewRepository.Remove(reviews[i]);
+                    Review review = new Review();
+                    review.UserReviewText = reviews[i].UserReviewText;
+                    review.userProfile = reviews[i].userProfile;
+                    review.Avatar = reviews[i].Avatar;
+                    review.Date = reviews[i].Date;
+                    review.Login = reviews[i].Login;
+                    review.bigItemInfo = newItem;
+                    review.ID = reviews[i].ID;
+                    unit.ReviewRepository.Add(review);
+                }
+
+                var watchlater = unit.WatchLaterRepository.GetAll()
+                                                           .ToList()
+                                                           .Where(p => p.bigItemInfoID == temp.ID)
+                                                           .Select(p => p)
+                                                           .ToList();
+                for (int i = 0; i < watchlater.Count(); i++)
+                {
+                    unit.WatchLaterRepository.Remove(watchlater[i]);
+                    WatchLater later = new WatchLater();
+                    later.miniItemInfo = mini;
+                    later.bigItemInfo = newItem;
+                    later.userID = watchlater[i].userID;
+                    later.ID = watchlater[i].ID;
+                    unit.WatchLaterRepository.Add(later);
+                }
+                var Likes = unit.LikesRepository .GetAll()
+                                                 .ToList()
+                                                 .Where(p => p.bigItemInfoID == temp.ID)
+                                                 .Select(p => p)
+                                                 .ToList();
+
+                for (int i = 0; i < Likes.Count(); i++)
+                {
+                    unit.LikesRepository.Remove(Likes[i]);
+                    Likes like = new Likes();
+                    like.ID = Likes[i].ID;
+                    like.bigItemInfo = newItem;
+                    like.miniItemInfo = mini;
+                    like.userID = Likes[i].userID;
+                    unit.LikesRepository.Add(like);
+                }
+                unit.BigItemInfoRepository.Add(newItem);
+                Items.Add(newItem);
+                //Items.ToList().Sort();
+                unit.Save();*/
+            
+            //}
+
+
+
+            /*BigItemInfo temp = Items.FirstOrDefault(p => p.ID == ID);
             if (temp != null)
             {
                 BigItemInfo item = unit.BigItemInfoRepository.GetById((int)ID);
@@ -115,8 +220,8 @@ namespace KP.ViewModel
                 unit.BigItemInfoRepository.Add(temp);
                 unit.MiniItemInfoRepository.Add(miniItem);
                 unit.Save();
-            }
-               
+            }*/
+
         }
         public string ErrorMsg
         {

@@ -36,7 +36,7 @@ namespace KP
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            App.Current.Shutdown();
         }
 
         private void btnMax_Click(object sender, RoutedEventArgs e)

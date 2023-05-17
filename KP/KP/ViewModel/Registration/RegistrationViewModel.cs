@@ -15,6 +15,7 @@ using KP.dbClasses;
 using System.Runtime.InteropServices;
 using KP.View.login;
 using System.IO;
+using KP.DBMethods.HashPasswordMD5;
 
 namespace KP.ViewModel.Registration
 {
@@ -148,8 +149,11 @@ namespace KP.ViewModel.Registration
                 UserProfile user = new UserProfile();
                 user.Email = UserMail;
                 user.Login = Username;
+
                 string s = SecureStringToString(Password);
-                user.Password = s;
+                string pass = HashMD5.HashPasswordWithMD5(s);
+                user.Password = pass;
+
                 string PathToPoster = "D:\\2k2s\\KP\\KP\\KP\\images\\icons\\default.jpg";
                 byte[] imageData;
                 using (FileStream fs = new FileStream(PathToPoster, FileMode.Open))

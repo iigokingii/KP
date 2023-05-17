@@ -19,7 +19,7 @@ namespace KP.DBMethods.Repositories
         }
         public void Add(FramesFromMovie user)
         {
-            db.Add(user);
+            db.framesFromMovies.Add(user);
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -50,12 +50,17 @@ namespace KP.DBMethods.Repositories
 
         public void Remove(FramesFromMovie user)
         {
-            db.Remove(user);
+            db.framesFromMovies.Remove(user);
         }
 
         public void Save()
         {
-            db.SaveChanges();
+            /*try
+            {*/
+                db.SaveChanges();
+
+            /*}
+            catch (Exception e) { }*/
         }
 
 

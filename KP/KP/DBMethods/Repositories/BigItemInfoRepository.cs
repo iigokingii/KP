@@ -18,7 +18,7 @@ namespace KP.DBMethods.Repositories
         }
         public void Add(BigItemInfo user)
         {
-            db.Add(user);
+            db.bigItemInfoInfos.Add(user);
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -72,12 +72,12 @@ namespace KP.DBMethods.Repositories
 
         public void Save()
         {
-           /* try
+            /*try
             {*/
                 db.SaveChanges();
-            //}
-            /*catch(Exception ex) { }*/
-            
+            /*}
+            catch (Exception ex) { }*/
+
         }
 
 

@@ -12,15 +12,26 @@
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition />
             <RowDefinition Height="100px"/>
         </Grid.RowDefinitions>
         <DataGrid ScrollViewer.CanContentScroll="True"
-                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                  BorderThickness="0"
+                  ScrollViewer.VerticalScrollBarVisibility="hidden"
                   AutoGenerateColumns="False"
-                  ColumnWidth="*"
-                  Background="Transparent"
-                  ItemsSource="{Binding Items}">
+                  Background="#C0C0C0"
+                  ItemsSource="{Binding Items}"
+                  HeadersVisibility="Column"
+                  CellStyle="{StaticResource tests}"
+                  ColumnHeaderStyle="{DynamicResource shapka}" HorizontalGridLinesBrush="#FF0021FA" VerticalGridLinesBrush="#FF0021FA"
+                  CanUserAddRows="False"
+                  >
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </DataGrid.RowHeaderStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"></DataGridTextColumn>
                 <DataGridTextColumn Header="{DynamicResource movieName}" Binding="{Binding Title}"></DataGridTextColumn>

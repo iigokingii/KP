@@ -56,12 +56,17 @@ namespace KP.DBMethods.Repositories
 
         public void Remove(MiniItemInfo user)
         {
-            db.Remove(user);
+            db.miniItemInfos.Remove(user);
         }
 
         public void Save()
         {
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+
+            }
+            catch (Exception e) { }
         }
 
         

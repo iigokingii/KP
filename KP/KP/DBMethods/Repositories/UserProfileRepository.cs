@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KP.db.context;
 using KP.dbClasses;
+using KP.DBMethods.HashPasswordMD5;
 using KP.View.login;
 
 namespace KP.DBMethods.Repositories.UserProfileRepositor
@@ -26,7 +27,7 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
         public bool AuthenticateUser(NetworkCredential credential)
         {
             bool validUser;
-            UserProfile? us =  db.userProfiles.FirstOrDefault(p => p.Login == credential.UserName && p.Password == credential.Password);
+            UserProfile? us =  db.userProfiles.FirstOrDefault(p => p.Login == credential.UserName && p.Password == HashMD5.HashPasswordWithMD5(credential.Password));
             validUser = us==null? false : true;
             return validUser;
         }
