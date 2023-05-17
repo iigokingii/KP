@@ -49,6 +49,8 @@
         <Setter Property="Margin" Value="0,5,0,0"/>
 
     </Style>
+    
+
     <Style x:Key="StUN" TargetType="TextBlock">
         <Setter Property="Foreground" Value="DarkGray"></Setter>
         <Setter Property="FontSize" Value="12"/>
@@ -56,9 +58,9 @@
         <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Margin" Value="0,15,0,0"/>
     </Style>
-    
-    
-    
+
+
+
     <Style x:Key="StInp" TargetType="Control">
         <Setter Property="Control.FontSize" Value="13"></Setter>
         <Setter Property="Control.FontWeight" Value="Medium"></Setter>
@@ -128,13 +130,22 @@
    
     
     <!--Постер -->
+    <Style x:Key="CategoryStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#C8C8C8"></Setter>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Margin" Value="0,15,0,20"/>
+    </Style>
     <Style x:Key="PosterText" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="12 8 0 0"/>
-        <Setter Property="Foreground" Value="#B784A7"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#dedddc"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="FontFamily" Value="MontSerrat"/>
     </Style>
+    
+
 
     <Style x:Key="PosterContainer" TargetType="ListBoxItem">
         <Setter Property="Template">
@@ -171,8 +182,31 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        
     </Style>
+    <!--Комментарии-->
+    <Style x:Key="CommentsList" TargetType="ListBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border x:Name="border">
+                        <ContentPresenter></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="border"  Property="Background" Value="Transparent"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+       
+    </Style>
+    <Style x:Key="backForCom" TargetType="Grid">
+        <Setter Property="Background" Value="#272b61"/>
+    </Style>
+    <!---->
+
+
 
     <Style x:Key="LangBut" TargetType="Button">
         <Setter Property="Width" Value="50"/>
@@ -241,7 +275,7 @@
     <Style x:Key="tests" TargetType="DataGridCell">
         <Setter Property="Background" Value="LightGray"/>
         <Setter Property="Foreground" Value="#4a555c"/>
-        <Setter Property="Control.FontSize" Value="10"></Setter>
+        <Setter Property="Control.FontSize" Value="12"></Setter>
         <Setter Property="Control.FontWeight" Value="Medium"></Setter>
         <Setter Property="Control.FontFamily" Value="Montserrat"/>
     </Style>

@@ -25,8 +25,8 @@ namespace KP.db.context
         }
         public DbAppContext()
         {
-           /* Database.EnsureDeleted();*/
-            /*Database.EnsureCreated();*/
+            /*Database.EnsureDeleted();
+            Database.EnsureCreated();*/
         }
 
 

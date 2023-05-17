@@ -47,21 +47,21 @@ namespace KP
             /*using (DbAppContext db = new DbAppContext())
             {
 
-            }
-*/
+            }*/
 
 
 
 
 
-            var regView = new Registration();
+
+           /* var regView = new Registration();
             regView.ShowDialog();
             if (regView.IsLoaded && regView.IsVisible == false)
             {
-                regView.Close();
+                regView.Close();*/
                 var mainWindow = new MainWindow();
                 mainWindow.Show();
-            }
+            /*}*/
         }
     }
 }

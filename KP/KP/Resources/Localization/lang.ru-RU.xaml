@@ -58,7 +58,9 @@
     <v:String x:Key="CategoryPopular">Популярное:</v:String>
     <v:String x:Key="CategoryNew">Новинки:</v:String>
     <v:String x:Key="CategoryGoKin">Выбор GoKin:</v:String>
-
+    <v:String x:Key="CategoryFantasy">Фэнтези:</v:String>
+    <v:String x:Key="CategoryDetectives">Детективы:</v:String>
+    <v:String x:Key="CategoryActions">Боевики:</v:String>
 
 
 </ResourceDictionary>

@@ -4,7 +4,7 @@
     <Style x:Key="LoginStyle" TargetType="Border">
         <Setter Property="CornerRadius" Value="33"/>
         <Setter Property="Opacity" Value="0.95"/>
-        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">

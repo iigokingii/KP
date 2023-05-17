@@ -12,7 +12,7 @@
     <UserControl.DataContext>
         <viewModel:FilmsViewModel/>
     </UserControl.DataContext>
-    <ScrollViewer  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
         <StackPanel>
             <Grid Visibility="{Binding IsVisible}">
                 <Grid.RowDefinitions>
@@ -21,12 +21,13 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Margin="0 0 20 0">
-                    <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryFantasy}"/>
+                    <TextBlock Style="{DynamicResource CategoryStyle}" Text="{DynamicResource CategoryFantasy}"/>
                     <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding FantasyCategory}"
-                              Visibility="{Binding IsVisible}"
-                              Background="Transparent"
-                              ItemContainerStyle="{StaticResource PosterContainer}">
+                                  Visibility="{Binding IsVisible}"
+                                  Background="Transparent"
+                                  PreviewMouseWheel="ListBox_PreviewMouseWheel"
+                                  ItemContainerStyle="{StaticResource PosterContainer}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <Button Style="{StaticResource PosterButtnon}" Command="{Binding DataContext.ShowItemCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" CommandParameter="{Binding}">
@@ -49,12 +50,13 @@
 
                 </StackPanel>
                 <StackPanel Grid.Row="1" Margin="0 0 20 0">
-                    <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryDetectives}"/>
+                    <TextBlock Style="{DynamicResource CategoryStyle}" Text="{DynamicResource CategoryDetectives}"/>
                     <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding DetectiveCategory}"
                               Visibility="{Binding IsVisible}"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                              PreviewMouseWheel="ListBox_PreviewMouseWheel"
                               Background="Transparent"
                               ItemContainerStyle="{StaticResource PosterContainer}">
                             <ListBox.ItemTemplate>
@@ -78,12 +80,13 @@
                     </ScrollViewer>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Margin="0 0 20 0">
-                    <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource CategoryActions}"/>
+                    <TextBlock Style="{DynamicResource CategoryStyle}" Text="{DynamicResource CategoryActions}"/>
                     <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden">
                         <ListBox  BorderThickness="0" ItemsSource="{Binding ActionCategory}"
                               Visibility="{Binding IsVisible}"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                              PreviewMouseWheel="ListBox_PreviewMouseWheel"
                               Background="Transparent"
                               ItemContainerStyle="{StaticResource PosterContainer}">
                             <ListBox.ItemTemplate>
@@ -170,14 +173,14 @@
                                     Foreground="{Binding ForegraundOfLike}"
                                     BorderThickness="1"
                                     Command="{Binding LikeFilmCommand}">
-                                <FA:IconImage Width="25px" Height="25px" Icon="ThumbsUp" Style="{StaticResource AccountButtonIconStyle}"/>
+                                <FA:IconImage Width="25px" Height="25px" Icon="Heart" Style="{StaticResource AccountButtonIconStyle}"/>
                             </Button>
                             <Button Style="{StaticResource AccountButton}" 
                                     Tag="#CCCCFF" Width="40" Height="40"
                                     Foreground="{Binding ForegraundOfWatchLater}"
                                     BorderThickness="1"
                                     Command="{Binding WatchLaterFilmCommand}">
-                                <FA:IconImage Width="25px" Height="25px"  Icon="Bookmark" Style="{StaticResource AccountButtonIconStyle}"/>
+                                <FA:IconImage Width="25px" Height="25px"  Icon="Clock" Style="{StaticResource AccountButtonIconStyle}"/>
                             </Button>
                         </StackPanel>
                         <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
@@ -263,17 +266,19 @@
                     </Grid>
                 </StackPanel>
                 <StackPanel Margin="30" Grid.Row="3">
-                    <TextBlock Text="{DynamicResource UsersComment}" Style="{StaticResource movieСharacteristics}"/>
+                    <TextBlock Text="{DynamicResource UsersComment}" Style="{StaticResource movieСharacteristics}" Margin="0 0 0 20"/>
                     <ListBox  BorderThickness="0" ItemsSource="{Binding Comments}"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                              Background="Red"
-                              ItemContainerStyle="{StaticResource PosterContainer}"
+                              PreviewMouseWheel="ListBox_PreviewMouseWheel"
+                              Background="Transparent"
+                              ItemContainerStyle="{StaticResource CommentsList}"
                               Width="600"
+                              
                               HorizontalAlignment="Left">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid Width="520px" Background="Gray">
+                                <Grid Margin="30 10 0 0" Width="520px" Style="{StaticResource backForCom}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="40"/>
                                         <ColumnDefinition/>
@@ -291,10 +296,18 @@
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Margin="8 0 0 0" Grid.Column="0" HorizontalAlignment="Left" Text="{Binding Login}"/>
-                                            <TextBlock Margin="0 0 20 0"  Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Date}"/>
+                                            <TextBlock Margin="8 0 0 0" FontSize="15" Grid.Column="0" HorizontalAlignment="Left"
+                                                       Text="{Binding Login}"
+                                                       Style="{StaticResource movieСharacteristicsBind}"/>
+                                            <TextBlock Margin="0 0 20 0" FontSize="11" Grid.Column="1" HorizontalAlignment="Right"
+                                                       Text="{Binding Date}"
+                                                       Style="{StaticResource movieСharacteristicsBind}"/>
                                         </Grid>
-                                        <TextBlock TextWrapping="Wrap" Margin="8 10 20 10" HorizontalAlignment="Left" Text="{Binding UserReviewText}"/>
+                                        <TextBlock TextWrapping="Wrap" Margin="8 10 20 10" HorizontalAlignment="Left"
+                                                   Text="{Binding UserReviewText}"
+                                                   Style="{StaticResource PosterText}"
+                                                   Foreground="#dbd8bf"
+                                                   FontSize="13"/>
                                     </StackPanel>
                                 </Grid>
                             </DataTemplate>

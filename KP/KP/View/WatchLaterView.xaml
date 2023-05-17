@@ -37,7 +37,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <ScrollViewer Visibility="{Binding IsVisibleItem}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="20">
+        <ScrollViewer x:Name="scrollViewer" Visibility="{Binding IsVisibleItem}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="500px"/>
@@ -157,17 +157,18 @@
                     </Grid>
                 </StackPanel>
                 <StackPanel Margin="30" Grid.Row="3">
-                    <TextBlock Text="{DynamicResource UsersComment}" Style="{StaticResource movieСharacteristics}"/>
+                    <TextBlock Text="{DynamicResource UsersComment}" Style="{StaticResource movieСharacteristics}" Margin="0 0 0 20"/>
                     <ListBox  BorderThickness="0" ItemsSource="{Binding Comments}"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                              Background="Red"
-                              ItemContainerStyle="{StaticResource PosterContainer}"
+                              PreviewMouseWheel="ListBox_PreviewMouseWheel"
+                              Background="Transparent"
+                              ItemContainerStyle="{StaticResource CommentsList}"
                               Width="600"
                               HorizontalAlignment="Left">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid Width="520px" Background="Gray">
+                                <Grid Margin="30 10 0 0" Width="520px" Style="{StaticResource backForCom}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="40"/>
                                         <ColumnDefinition/>
@@ -185,10 +186,18 @@
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Margin="8 0 0 0" Grid.Column="0" HorizontalAlignment="Left" Text="{Binding Login}"/>
-                                            <TextBlock Margin="0 0 20 0"  Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Date}"/>
+                                            <TextBlock Margin="8 0 0 0" FontSize="15" Grid.Column="0" HorizontalAlignment="Left"
+                                                       Text="{Binding Login}"
+                                                       Style="{StaticResource movieСharacteristicsBind}"/>
+                                            <TextBlock Margin="0 0 20 0" FontSize="11" Grid.Column="1" HorizontalAlignment="Right"
+                                                       Text="{Binding Date}"
+                                                       Style="{StaticResource movieСharacteristicsBind}"/>
                                         </Grid>
-                                        <TextBlock TextWrapping="Wrap" Margin="8 10 20 10" HorizontalAlignment="Left" Text="{Binding UserReviewText}"/>
+                                        <TextBlock TextWrapping="Wrap" Margin="8 10 20 10" HorizontalAlignment="Left"
+                                                   Text="{Binding UserReviewText}"
+                                                   Style="{StaticResource PosterText}"
+                                                   Foreground="#dbd8bf"
+                                                   FontSize="13"/>
                                     </StackPanel>
                                 </Grid>
                             </DataTemplate>

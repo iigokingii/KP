@@ -16,8 +16,8 @@
     <v:String x:Key="OldPassword">Old password:</v:String>
     <v:String x:Key="NewPassword">New password:</v:String>
     <v:String x:Key="RepeatPassword">Repeat new password:</v:String>
-    <v:String x:Key="UserAvatar">Сменить аватар</v:String>
-    <v:String x:Key="UpdateUserInfo">Изменить данные аккаунта</v:String>
+    <v:String x:Key="UserAvatar">Change Avatar</v:String>
+    <v:String x:Key="UpdateUserInfo">Change account data</v:String>
     <v:String x:Key="UserMail">Email:</v:String>
     <v:String x:Key="UserComment">Enter a comment:</v:String>
     <v:String x:Key="UserCommentPublish">Publish a comment</v:String>
