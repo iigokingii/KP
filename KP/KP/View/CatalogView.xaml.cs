@@ -27,7 +27,6 @@ namespace KP.View
 
         public CatalogView()
         {
-            
             InitializeComponent();
         }
         private void ListBox_PreviewMouseWheel(object sender, MouseWheelEventArgs e)

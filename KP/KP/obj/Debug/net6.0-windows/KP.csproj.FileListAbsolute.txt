@@ -114,3 +114,5 @@ D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\WatchLaterView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\WatchLaterView.baml
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\AllFilmsView.g.cs
 D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\AllFilmsView.baml
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\MainWindowUser.g.cs
+D:\2k2s\KP\KP\KP\obj\Debug\net6.0-windows\View\MainWindowUser.baml

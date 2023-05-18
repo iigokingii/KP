@@ -38,7 +38,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <ScrollViewer x:Name="scrollViewer" Visibility="{Binding IsVisibleItem}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="20">
+        <ScrollViewer x:Name="scrollViewer" Visibility="{Binding IsVisibleItem}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="500px"/>
@@ -48,10 +48,17 @@
                 </Grid.RowDefinitions>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="310px"/>
+                        <ColumnDefinition Width="340px"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="0">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <Button Width="24" Height="24" VerticalAlignment="Top" Margin="0 5 10 0"
+                                Style="{StaticResource LangBut}"
+                                Command="{Binding BackCommand}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\icons\back1.png"/>
+                            </Button.Background>
+                        </Button>
                         <Image Width="350px" Height="454px" HorizontalAlignment="Left" Source="{Binding BigPoster,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <Grid Margin="20 0 0 0" Grid.Column="1">

@@ -62,6 +62,7 @@ namespace KP.ViewModel
         ImageSource _frame3;
         ImageSource _frame4;
         string _comment;
+        string _search;
 
 
         public ICommand ShowItemCommand { get; }
@@ -70,6 +71,8 @@ namespace KP.ViewModel
         public ICommand WatchLaterFilmCommand { get; }
         public ICommand DeleteLikeFilmCommand { get; }
         public ICommand DeleteWatchLaterFilmCommand { get; }
+        public ICommand SearchInCatalogCommand { get; }
+        public ICommand BackCommand { get; }
 
 
         public CatalogViewModel()
@@ -89,8 +92,28 @@ namespace KP.ViewModel
             WatchLaterFilmCommand = new ViewModelCommandBase(WatchLaterFilm);
             DeleteLikeFilmCommand = new ViewModelCommandBase(DeleteLikeFilm);
             DeleteWatchLaterFilmCommand = new ViewModelCommandBase(DeleteWatchLaterFilm);
+            SearchInCatalogCommand = new ViewModelCommandBase(SearchInCatalog);
+            BackCommand = new ViewModelCommandBase(Back);
+
         }
 
+        private void SearchInCatalog(object obj)
+        {
+            ObservableCollection<MiniItemInfo> mini;
+            if (!String.IsNullOrEmpty(Search))
+            {
+                MiniItemInfos = new ObservableCollection<MiniItemInfo>(unit.MiniItemInfoRepository.GetAll().Where(p => p.Name.Contains(Search)).Select(p => p));
+            }
+            else
+                MiniItemInfos = new ObservableCollection<MiniItemInfo>(unit.MiniItemInfoRepository.GetAll().Select(p=>p));
+
+
+        }
+        private void Back(object obj)
+        {
+            IsVisible = Visibility.Visible;
+            IsVisibleItem = Visibility.Collapsed;
+        }
         private void DeleteLikeFilm(object obj)
         {
             if (ForegraundOfDislike == _default)
@@ -226,13 +249,6 @@ namespace KP.ViewModel
                         break;
                     }
             }
-
-/*
-            Frame1 = ConvertoBitmapImage(frames[0].Frame);
-            Frame2 = ConvertoBitmapImage(frames[1].Frame);
-            Frame3 = ConvertoBitmapImage(frames[2].Frame);
-            Frame4 = ConvertoBitmapImage(frames[3].Frame);*/
-
             // byte[]->img
             byte[] d = (byte[])_bigItemInfo.BigImg;
             MemoryStream stream = new MemoryStream(d);
@@ -281,6 +297,18 @@ namespace KP.ViewModel
             {
                 _frame4 = value;
                 OnPropertyChanged("Frame4");
+            }
+        }
+        public string Search
+        {
+            get
+            {
+                return _search;
+            }
+            set
+            {
+                _search = value;
+                OnPropertyChanged(nameof(Search));
             }
         }
         public SolidColorBrush ForegraundOfLike

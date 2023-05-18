@@ -61,7 +61,7 @@
                         <!--<TextBlock Margin="-5 0 0 0" FontSize="20px" VerticalAlignment="Center" Style="{DynamicResource TextSt}">GoKin</TextBlock>-->
                     </StackPanel>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="#eb346e"
                                  Command="{Binding ShowHomeViewCommand}"
                                  IsChecked="True">
                         <StackPanel Orientation="Horizontal">
@@ -71,7 +71,7 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="#b84066"
                                  Command="{Binding ShowCatalogViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Ticket" Style="{StaticResource menuButtonIconStyle}"/>
@@ -80,7 +80,7 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="#c9640c"
                                  Command="{Binding ShowFilmsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Film" Style="{StaticResource menuButtonIconStyle}"/>
@@ -89,15 +89,7 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE">
-                        <StackPanel Orientation="Horizontal">
-                            <FA:IconImage Icon="Home" Style="{StaticResource menuButtonIconStyle}"/>
-                            <TextBlock Text="{DynamicResource NavCatalogSeries}" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-
-                    </RadioButton>
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="#bfac1f"
                                  Command="{Binding ShowAllFilmsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Database" Style="{StaticResource menuButtonIconStyle}"/>
@@ -106,7 +98,7 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="White"
                                  Command="{Binding ShowAddViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Add"  Style="{StaticResource menuButtonIconStyle}"/>
@@ -115,16 +107,16 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="Red"
                                  Command="{Binding ShowLikedFilmsCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <FA:IconImage Icon="ThumbsUp" Style="{StaticResource menuButtonIconStyle}"/>
+                            <FA:IconImage Icon="Heart" Style="{StaticResource menuButtonIconStyle}"/>
                             <TextBlock Text="{DynamicResource NavLiked}" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="Black"
                                  Command="{Binding ShowWatchLagerFilmsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Clock" Style="{StaticResource menuButtonIconStyle}"/>
@@ -132,7 +124,7 @@
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#E285DE"
+                                 Tag="#3e65f7"
                                  Command="{Binding ShowSettingsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Gear" Style="{StaticResource menuButtonIconStyle}"/>
@@ -215,26 +207,16 @@
                             </Ellipse.Fill>
                         </Ellipse>
                         <Button Style="{StaticResource AccountButton}" Tag="#4ADAEC">
-                            <FA:IconImage Icon="Clock" Style="{StaticResource AccountButtonIconStyle}"/>
+                            <FA:IconImage Icon="Clock" Height="16" Width="16" Style="{StaticResource AccountButtonIconStyle}"/>
                         </Button>
                         <Button Style="{StaticResource AccountButton}" Tag="#FF47CA">
-                            <FA:IconImage Icon="Envelope" Style="{StaticResource AccountButtonIconStyle}"/>
+                            <FA:IconImage Icon="Envelope" Height="16" Width="16" Style="{StaticResource AccountButtonIconStyle}"/>
                         </Button>
                         <Button Style="{StaticResource AccountButton}" Tag="#78DBE2">
-                            <FA:IconImage Icon="BELL" Style="{StaticResource AccountButtonIconStyle}"/>
+                            <FA:IconImage Icon="BELL" Height="16" Width="16" Style="{StaticResource AccountButtonIconStyle}"/>
                         </Button>
                     </StackPanel>
                 </Grid>
-                <!--<StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 0 0">
-                    <TextBlock VerticalAlignment="Center" Margin="5" Style="{DynamicResource StUN}" Text="{DynamicResource Search}"></TextBlock>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox CaretBrush="Red" Margin="5 0 0 0" x:Name="UserName" 
-                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding Username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                        --><!--<Image Source="D:\2k2s\KP\KP\KP\images\icons\user.png" Width="16px"></Image>--><!--
-                        <FA:IconImage Icon="Search" Width="20px" Height="20px"/>
-
-                    </StackPanel>
-                </StackPanel>-->
                 <ContentControl Content="{Binding CurrentChildView}"
                                 Grid.Row="3"
                                 Margin="25"/>

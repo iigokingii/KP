@@ -174,8 +174,8 @@ namespace KP.ViewModel
         private void LoadCurrentUserData()
         {
 
-            Thread.CurrentPrincipal = new GenericPrincipal(
-                   new GenericIdentity("admin"), null);
+           /* Thread.CurrentPrincipal = new GenericPrincipal(
+                   new GenericIdentity("admin"), null);*/
             try
             {
                 var user = unit.Users.GetByLogin(Thread.CurrentPrincipal.Identity.Name);
@@ -192,18 +192,16 @@ namespace KP.ViewModel
                     };
 
                 }
-                /*else
+                else
                 {
-                    MessageBox.Show("Пользователь не вошел в аккаунт","log in",MessageBoxButton.OK);
+                    MessageBox.Show("Пользователь не вошел в аккаунт", "log in", MessageBoxButton.OK);
                     Thread.Sleep(1000);
                     Application.Current.Shutdown();
-                }*/
+                }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Пользователь не вошел в аккаунт","log in",MessageBoxButton.OK);
-                Thread.Sleep(1000);
-                Application.Current.Shutdown();
+               
             }
 
         }

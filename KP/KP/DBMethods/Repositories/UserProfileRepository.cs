@@ -67,7 +67,11 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
 
         public void Remove(UserProfile user)
         {
-            db.userProfiles.Remove(user);
+            try
+            {
+                db.userProfiles.Remove(user);
+            }
+            catch (Exception e) { }
         }
         public void Save()
         {

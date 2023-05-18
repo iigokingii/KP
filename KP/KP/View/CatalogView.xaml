@@ -16,34 +16,55 @@
     <Grid Margin="10 0 0 0">
         <!--  {Binding IsVisible}  -->
         <!--Collapsed-->
-        <ListBox  BorderThickness="0" ItemsSource="{Binding MiniItemInfos}"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40px"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Visibility="{Binding IsVisible}">
+                <TextBlock Style="{DynamicResource StUN}" Text="{DynamicResource Search}"/>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBox CaretBrush="Red" Margin="5 0 0 0" x:Name="UserName" 
+                                     Width="206px" Style="{DynamicResource StInp}" Text="{Binding Search,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <Button Width="24" Height="24" BorderThickness="0" 
+                            Style="{DynamicResource LangBut}"
+                            Command="{Binding SearchInCatalogCommand}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\icons\lupa.png"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <ListBox Grid.Row="1" BorderThickness="0" ItemsSource="{Binding MiniItemInfos}"
                   Visibility="{Binding IsVisible}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   ScrollViewer.VerticalScrollBarVisibility="Hidden"
                   Background="Transparent"
                   PreviewMouseWheel="ListBox_PreviewMouseWheel"
                   ItemContainerStyle="{StaticResource PosterContainer}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Button Style="{StaticResource PosterButtnon}" Command="{Binding DataContext.ShowItemCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" CommandParameter="{Binding}">
-                        <StackPanel Orientation="Vertical" Margin="15 10 10 40">
-                            <Image Width="160" Height="200" Source="{Binding Path=SmallIMG}"/>
-                            <TextBlock FontSize="15px" TextWrapping="Wrap" Style="{StaticResource PosterText}" Text="{Binding Path=Name}"/>
-                            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Genre}"/>
-                            <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Year}"/>
-                        </StackPanel>
-                    </Button>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Style="{StaticResource PosterButtnon}" Command="{Binding DataContext.ShowItemCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" CommandParameter="{Binding}">
+                            <StackPanel Orientation="Vertical" Margin="15 10 10 40">
+                                <Image Width="160" Height="200" Source="{Binding Path=SmallIMG}"/>
+                                <TextBlock FontSize="15px" TextWrapping="Wrap" Style="{StaticResource PosterText}" Text="{Binding Path=Name}"/>
+                                <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Genre}"/>
+                                <TextBlock Style="{StaticResource PosterText}" Text="{Binding Path=Year}"/>
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </Grid>
+        
         <!-- {Binding IsVisibleItem} -->
         <!--Visible-->
-        <ScrollViewer Visibility="{Binding IsVisibleItem}"  x:Name="scrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="20">
+        <ScrollViewer Visibility="{Binding IsVisibleItem}"  x:Name="scrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="500px"/>
@@ -53,10 +74,17 @@
                 </Grid.RowDefinitions>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="310px"/>
+                        <ColumnDefinition Width="340px"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="0">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <Button Width="24" Height="24" VerticalAlignment="Top" Margin="0 5 10 0"
+                                Style="{StaticResource LangBut}"
+                                Command="{Binding BackCommand}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\icons\back1.png"/>
+                            </Button.Background>
+                        </Button>
                         <Image Width="350px" Height="454px" HorizontalAlignment="Left" Source="{Binding BigPoster,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <Grid Margin="20 0 0 0" Grid.Column="1">

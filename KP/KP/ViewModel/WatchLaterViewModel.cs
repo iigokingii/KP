@@ -52,6 +52,8 @@ namespace KP.ViewModel
 
         public ICommand ShowItemCommand { get; }
         public ICommand AddCommentByUserCommand { get; }
+        public ICommand BackCommand { get; }
+
         public WatchLaterViewModel()
         {
             unit = new UnitOfWork();
@@ -60,6 +62,8 @@ namespace KP.ViewModel
             _comments = new ObservableCollection<Review>();
             ShowItemCommand = new ViewModelCommandBase(ShowItem);
             AddCommentByUserCommand = new ViewModelCommandBase(AddCommentByUser);
+            BackCommand = new ViewModelCommandBase(Back);
+
 
             var t = unit.MiniItemInfoRepository.GetAll();
             user = db.userProfiles.Include(p => p.likes).FirstOrDefault(p => p.Login == Login);
@@ -74,6 +78,11 @@ namespace KP.ViewModel
                 }
             }
             _watchLater = new ObservableCollection<MiniItemInfo>(kk.Select(p => p));
+        }
+        private void Back(object obj)
+        {
+            IsVisible = Visibility.Visible;
+            IsVisibleItem = Visibility.Collapsed;
         }
         private void AddCommentByUser(object obj)
         {

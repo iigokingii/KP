@@ -100,6 +100,7 @@ namespace KP.ViewModel.LoginViewModel
                 Thread.CurrentPrincipal = new GenericPrincipal(
                     new GenericIdentity(Username),null);
                 IsViewVisible = false;
+                App.Login = Username;
             }
             else
             {

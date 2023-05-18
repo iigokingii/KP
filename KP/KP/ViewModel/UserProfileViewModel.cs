@@ -16,6 +16,7 @@ using KP.DBMethods.UnitOfWork;
 using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.IdentityModel.Tokens;
+using KP.DBMethods.HashPasswordMD5;
 
 namespace KP.ViewModel
 {
@@ -33,6 +34,8 @@ namespace KP.ViewModel
         ImageSource _userAvatar;
         string _pathToUserAvatar;
         string _errormsg;
+        string _successMsg;
+
 
 
         public ICommand ChangeUserAvatarCommand { get; }
@@ -52,40 +55,44 @@ namespace KP.ViewModel
 
         private void ChangeUserProfileData(object obj)
         {
-            ErrorMsg = "";
-            updatedUser.reviews = _oldUserProfile.reviews;   
-            updatedUser.Email = UserEmail;
-            updatedUser.ID = _oldUserProfile.ID;
-            updatedUser.Login = _oldUserProfile.Login;
-            if (!string.IsNullOrEmpty(PathToUserAvatar))
+            if (!string.IsNullOrEmpty(SecureStringToString(UserPassword)))
             {
-                byte[] imageData;
-                using (FileStream fs = new FileStream(PathToUserAvatar, FileMode.Open))
+                ErrorMsg = "";
+                if (HashMD5.HashPasswordWithMD5(SecureStringToString(UserPassword)) == _oldUserProfile.Password)
                 {
-                    imageData = new byte[fs.Length];
-                    fs.Read(imageData, 0, imageData.Length);
-                }
-                updatedUser.Avatar = imageData;
-            }
-            else
-            {
-                updatedUser.Avatar = _oldUserProfile.Avatar;
-            }
-            updatedUser.Password = _oldUserProfile.Password;
-            if(!string.IsNullOrEmpty(SecureStringToString(UserPassword)))
-            {
-                if ( SecureStringToString(UserPassword) == _oldUserProfile.Password)
-                {
-                    if (!(string.IsNullOrEmpty(SecureStringToString(NewUserPassword))) && !(string.IsNullOrEmpty(SecureStringToString(RepeatNewUserPassword))))
+                    updatedUser.reviews = _oldUserProfile.reviews;
+                    updatedUser.Email = UserEmail;
+                    updatedUser.ID = _oldUserProfile.ID;
+                    updatedUser.Login = _oldUserProfile.Login;
+                    if (!string.IsNullOrEmpty(PathToUserAvatar))
                     {
-                        if(SecureStringToString(NewUserPassword) == SecureStringToString(RepeatNewUserPassword))
-                            updatedUser.Password = SecureStringToString(NewUserPassword);
+                        byte[] imageData;
+                        using (FileStream fs = new FileStream(PathToUserAvatar, FileMode.Open))
+                        {
+                            imageData = new byte[fs.Length];
+                            fs.Read(imageData, 0, imageData.Length);
+                        }
+                        updatedUser.Avatar = imageData;
+                    }
+                    else
+                    {
+                        updatedUser.Avatar = _oldUserProfile.Avatar;
+                    }
+                    updatedUser.Password = _oldUserProfile.Password;
+                    if (!(string.IsNullOrEmpty(HashMD5.HashPasswordWithMD5(SecureStringToString(NewUserPassword)))) && !(string.IsNullOrEmpty(HashMD5.HashPasswordWithMD5(SecureStringToString(RepeatNewUserPassword)))))
+                    {
+                        if (SecureStringToString(NewUserPassword) == SecureStringToString(RepeatNewUserPassword))
+                            updatedUser.Password = HashMD5.HashPasswordWithMD5(SecureStringToString(NewUserPassword));
                         else
                         {
                             ErrorMsg = "*Введеные новые пароли не совпадают";
                             return;
                         }
                     }
+                    unit.Users.Remove(_oldUserProfile);
+                    unit.Users.Add(updatedUser);
+                    unit.Save();
+                    SuccessMsg = "Успешно изменено! Перезапустите приложение,чтобы изменения вступили в силу.";
                 }
                 else
                 {
@@ -95,11 +102,10 @@ namespace KP.ViewModel
             }
             else
             {
-                updatedUser.Password = _oldUserProfile.Password;
+                ErrorMsg = "*Введите пароль для изменения данных";
+                return;
             }
-            unit.Users.Remove(_oldUserProfile);
-            unit.Users.Add(updatedUser);
-            unit.Save();
+            
         }
 
         private ImageSource ConvertoBitmapImage(byte[]? frame)
@@ -158,6 +164,18 @@ namespace KP.ViewModel
                 {
                     System.Windows.MessageBox.Show("Выберите файл подходящего формата.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+        }
+        public string SuccessMsg
+        {
+            get
+            {
+                return _successMsg;
+            }
+            set
+            {
+                _successMsg = value;
+                OnPropertyChanged("SuccessMsg");
             }
         }
         public string ErrorMsg

@@ -144,7 +144,7 @@
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="FontFamily" Value="MontSerrat"/>
     </Style>
-    
+
 
 
     <Style x:Key="PosterContainer" TargetType="ListBoxItem">
@@ -168,7 +168,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     <Style x:Key="PosterButtnon" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Width" Value="180px"/>

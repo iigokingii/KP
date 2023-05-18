@@ -57,19 +57,17 @@ namespace KP.ViewModel
 
         public ICommand ShowItemCommand { get; }
         public ICommand AddCommentByUserCommand { get; }
+        public ICommand BackCommand { get; }
+
         public LikesViewModel()
         {
             unit = new UnitOfWork();
             ObservableCollection<MiniItemInfo> kk = new ObservableCollection<MiniItemInfo>();
             DbAppContext db = new DbAppContext();
-
-            /* var t = unit.MiniItemInfoRepository.GetAll();
-             if (t != null)
-                 LikedMini = new ObservableCollection<MiniItemInfo>(t.Select(p => p));*/
             _comments = new ObservableCollection<Review>();
             ShowItemCommand = new ViewModelCommandBase(ShowItem);
             AddCommentByUserCommand = new ViewModelCommandBase(AddCommentByUser);
-          
+            BackCommand = new ViewModelCommandBase(Back);
             var t = unit.MiniItemInfoRepository.GetAll();
             user = db.userProfiles.Include(p => p.likes).FirstOrDefault(p => p.Login == Login);
 
@@ -83,13 +81,11 @@ namespace KP.ViewModel
                 }
             }
             _likedMini = new ObservableCollection<MiniItemInfo>(kk.Select(p=>p));
-            
-/*            user = unit.Users.GetByLogin(Login);
-*/           /* if (user != null)
-            {
-                //LikedMini = new ObservableCollection<MiniItemInfo>(t.Where(t=>).Select(p => p));
-            }*/
-
+        }
+        private void Back(object obj)
+        {
+            IsVisible = Visibility.Visible;
+            IsVisibleItem = Visibility.Collapsed;
         }
         private void AddCommentByUser(object obj)
         {

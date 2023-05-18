@@ -74,6 +74,7 @@ namespace KP.ViewModel
         public ICommand WatchLaterFilmCommand { get; }
         public ICommand DeleteLikeFilmCommand { get; }
         public ICommand DeleteWatchLaterFilmCommand { get; }
+        public ICommand BackCommand { get; }
 
 
         public FilmsViewModel()
@@ -99,6 +100,13 @@ namespace KP.ViewModel
             _comments = new ObservableCollection<Review>();
             ShowItemCommand = new ViewModelCommandBase(ShowItem);
             AddCommentByUserCommand = new ViewModelCommandBase(AddCommentByUser);
+            BackCommand = new ViewModelCommandBase(Back);
+
+        }
+        private void Back(object obj)
+        {
+            IsVisible = Visibility.Visible;
+            IsVisibleItem = Visibility.Collapsed;
         }
         private void DeleteLikeFilm(object obj)
         {
