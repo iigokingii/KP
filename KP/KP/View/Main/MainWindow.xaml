@@ -71,7 +71,7 @@
 
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="#b84066"
+                                 Tag="#b3047e"
                                  Command="{Binding ShowCatalogViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <FA:IconImage Icon="Ticket" Style="{StaticResource menuButtonIconStyle}"/>

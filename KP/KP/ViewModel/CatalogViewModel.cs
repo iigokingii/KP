@@ -73,7 +73,10 @@ namespace KP.ViewModel
         public ICommand DeleteWatchLaterFilmCommand { get; }
         public ICommand SearchInCatalogCommand { get; }
         public ICommand BackCommand { get; }
+        public ICommand SortByGenreCommand { get; }
+        public ICommand SortByTitleCommand { get; }
 
+        public ICommand SortByYearCommand { get; }
 
         public CatalogViewModel()
         {
@@ -94,7 +97,24 @@ namespace KP.ViewModel
             DeleteWatchLaterFilmCommand = new ViewModelCommandBase(DeleteWatchLaterFilm);
             SearchInCatalogCommand = new ViewModelCommandBase(SearchInCatalog);
             BackCommand = new ViewModelCommandBase(Back);
+            SortByGenreCommand = new ViewModelCommandBase(SortByGenre);
+            SortByTitleCommand = new ViewModelCommandBase(SortByTitle);
+            SortByYearCommand = new ViewModelCommandBase(SortByYear);
+        }
 
+        private void SortByYear(object obj)
+        {
+           MiniItemInfos = new ObservableCollection<MiniItemInfo>( MiniItemInfos.OrderBy(p => p.Year).Select(p=>p));
+        }
+
+        private void SortByTitle(object obj)
+        {
+            MiniItemInfos = new ObservableCollection<MiniItemInfo>(MiniItemInfos.OrderBy(p => p.Name).Select(p => p));
+        }
+
+        private void SortByGenre(object obj)
+        {
+            MiniItemInfos = new ObservableCollection<MiniItemInfo>(MiniItemInfos.OrderBy(p => p.Genre).Select(p => p));
         }
 
         private void SearchInCatalog(object obj)

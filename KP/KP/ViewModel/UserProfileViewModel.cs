@@ -63,7 +63,7 @@ namespace KP.ViewModel
                     updatedUser.reviews = _oldUserProfile.reviews;
                     updatedUser.Email = UserEmail;
                     updatedUser.ID = _oldUserProfile.ID;
-                    updatedUser.Login = _oldUserProfile.Login;
+                    updatedUser.Login = UserName;
                     if (!string.IsNullOrEmpty(PathToUserAvatar))
                     {
                         byte[] imageData;
@@ -79,7 +79,7 @@ namespace KP.ViewModel
                         updatedUser.Avatar = _oldUserProfile.Avatar;
                     }
                     updatedUser.Password = _oldUserProfile.Password;
-                    if (!(string.IsNullOrEmpty(HashMD5.HashPasswordWithMD5(SecureStringToString(NewUserPassword)))) && !(string.IsNullOrEmpty(HashMD5.HashPasswordWithMD5(SecureStringToString(RepeatNewUserPassword)))))
+                    if (!(string.IsNullOrEmpty(SecureStringToString(NewUserPassword))) && !(string.IsNullOrEmpty(SecureStringToString(RepeatNewUserPassword))))
                     {
                         if (SecureStringToString(NewUserPassword) == SecureStringToString(RepeatNewUserPassword))
                             updatedUser.Password = HashMD5.HashPasswordWithMD5(SecureStringToString(NewUserPassword));

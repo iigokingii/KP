@@ -75,7 +75,12 @@ namespace KP.DBMethods.Repositories.UserProfileRepositor
         }
         public void Save()
         {
-            this.db.SaveChanges();
+            try
+            {
+                this.db.SaveChanges();
+            }
+            catch(Exception ex) { }
+          
         }
 
 

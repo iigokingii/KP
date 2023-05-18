@@ -49,8 +49,12 @@
     <v:String x:Key="movieSmallPoster">Добавить постер: </v:String>
     <v:String x:Key="movieAddBut">Добавить данные в БД</v:String>
 
-    <v:String x:Key="Search">Поиск</v:String>
-
+    <v:String x:Key="Search">Поиск:</v:String>
+    <v:String x:Key="SortBy">Сортировка по:</v:String>
+    <v:String x:Key="SortByGenre">Жанру</v:String>
+    <v:String x:Key="SortByName">Имени</v:String>
+    <v:String x:Key="SortByYear">Году</v:String>
+    
     <v:String x:Key="SearchByIdDB">Введите ID фильма/сериала:</v:String>
     <v:String x:Key="ButtonUpdateDB">Изменить</v:String>
     <v:String x:Key="ButtonDeleteFromDB">Удалить</v:String>

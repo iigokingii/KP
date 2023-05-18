@@ -25,40 +25,11 @@ namespace KP
         public static string Login;
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            /*
-             var loginView = new login();
-                loginView.ShowDialog();
-                if (loginView.IsLoaded && loginView.IsVisible == false)
-                {
-                    loginView.Close();
-                    var mainWindow = new MainWindow();
-                    mainWindow.Show();
-                }
-                loginView.IsVisibleChanged += (s, ev) =>
-                {
-                    if (loginView.IsVisible == false && loginView.IsLoaded)
-                    {
-                        var mainWindow = new MainWindow();
-                        mainWindow.Show();
-                        loginView.Close();
-                    }
-                };  
-             */
-
-
-
-            /*using (DbAppContext db = new DbAppContext())
+            using (DbAppContext db = new DbAppContext())
             {
 
-            }*/
-
-
-
-
-
-            /* try
-             {*/
-            var regView = new Registration();
+            }           
+            /*var regView = new Registration();
             regView.ShowDialog();
             if (regView.IsLoaded && regView.IsVisible == false)
             {
@@ -76,9 +47,7 @@ namespace KP
                         mainWindow.Show();
                     }
                 }
-            }
-            /*}
-            catch (Exception ex) { }*/
+            }*/
         }
     }
 }
