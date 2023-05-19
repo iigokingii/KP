@@ -92,9 +92,9 @@ namespace KP.ViewModel
             if (t != null)
             {
                 _miniItemInfos = new ObservableCollection<MiniItemInfo>(t.Select(p => p));
-                _actionCategory = new ObservableCollection<MiniItemInfo>(t.Where(p=>p.Genre=="Боевик"|| p.Genre == "боевик").Select(p=>p));
-                _detectiveCategory = new ObservableCollection<MiniItemInfo>(t.Where(p => p.Genre == "Детектив" || p.Genre == "детектив").Select(p => p));
-                _fantasyCategory = new ObservableCollection<MiniItemInfo>(t.Where(p => p.Genre == "Фэнтези" || p.Genre == "фэнтези").Select(p => p));
+                _actionCategory = new ObservableCollection<MiniItemInfo>(t.Where(p=>p.Genre.Contains("Боевик")|| p.Genre.Contains("боевик")).Select(p=>p));
+                _detectiveCategory = new ObservableCollection<MiniItemInfo>(t.Where(p => p.Genre.Contains("Детектив") || p.Genre.Contains("детектив")).Select(p => p));
+                _fantasyCategory = new ObservableCollection<MiniItemInfo>(t.Where(p => p.Genre.Contains("Фэнтези") || p.Genre.Contains("фэнтези")).Select(p => p));
             }
             user = unit.Users.GetByLogin(Login);
             _comments = new ObservableCollection<Review>();

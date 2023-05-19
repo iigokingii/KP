@@ -39,7 +39,6 @@ namespace KP.ViewModel
 
             ShowHomeViewCommand = new ViewModelCommandBase(ShowHome);
             ShowCatalogViewCommand = new ViewModelCommandBase(ShowCatalog);
-           
             ShowUserProfileCommand = new ViewModelCommandBase(ShowUserProfile);
             ShowSettingsCommand = new ViewModelCommandBase(ShowSettings);
             ShowFilmsCommand = new ViewModelCommandBase(ShowFilms);

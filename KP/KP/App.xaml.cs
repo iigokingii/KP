@@ -25,18 +25,18 @@ namespace KP
         public static string Login;
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            using (DbAppContext db = new DbAppContext())
-            {
+            /* using (DbAppContext db = new DbAppContext())
+             {
 
-            }           
-            /*var regView = new Registration();
+             }   */
+            var regView = new Registration();
             regView.ShowDialog();
             if (regView.IsLoaded && regView.IsVisible == false)
             {
                 regView.Close();
                 if (!string.IsNullOrEmpty(Login))
                 {
-                    if (Login == "admin")
+                    if (Login.Contains("admin"))
                     {
                         var mainWindow = new MainWindow();
                         mainWindow.Show();
@@ -47,7 +47,7 @@ namespace KP
                         mainWindow.Show();
                     }
                 }
-            }*/
+            }
         }
     }
 }

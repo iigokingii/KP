@@ -169,7 +169,6 @@ namespace KP.ViewModel
             unit.Save();
         }
 
-        //todo
         private void WatchLaterFilm(object obj)
         {
             if (ForegraundOfWatchLater == _default)
@@ -186,7 +185,6 @@ namespace KP.ViewModel
             unit.WatchLaterRepository.Add(later);
             unit.Save();
         }
-        //todo
         private void LikeFilm(object obj)
         {
             if (ForegraundOfLike == _default)
