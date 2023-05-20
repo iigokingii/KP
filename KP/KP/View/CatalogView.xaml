@@ -43,7 +43,7 @@
                             Content="{DynamicResource SortByGenre}"
                             Command="{Binding SortByGenreCommand}"/>
                     <Button Margin="10 0 0 1" Style="{StaticResource AddPosterButton}" 
-                            Content="{DynamicResource SortByYear}"
+                            Content="{DynamicResource SortByRating}"
                             Command="{Binding SortByYearCommand}"/>
                 </StackPanel>
             </StackPanel>

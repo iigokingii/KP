@@ -90,9 +90,9 @@ namespace KP.ViewModel
             if (t != null)
             {
                 _miniItemInfos = new ObservableCollection<MiniItemInfo>(t.Select(p => p));
-                _newCategory = new ObservableCollection<MiniItemInfo>(t.OrderBy(p=>p.Year).Take(6).Select(p=>p));
-                _popularCategory = new ObservableCollection<MiniItemInfo>(t.Take(6).Select(p => p));
-                _GokinCategory = new ObservableCollection<MiniItemInfo>(t.OrderByDescending(p => p.Year).Take(6).Select(p => p));
+                _newCategory = new ObservableCollection<MiniItemInfo>(t.OrderBy(p=>p.Year).Take(9).Select(p=>p));
+                _popularCategory = new ObservableCollection<MiniItemInfo>(t.Take(9).Select(p => p));
+                _GokinCategory = new ObservableCollection<MiniItemInfo>(t.OrderByDescending(p => p.Year).Take(9).Select(p => p));
             }
             user = unit.Users.GetByLogin(Login);
             _comments = new ObservableCollection<Review>();

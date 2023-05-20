@@ -205,7 +205,7 @@
         </Grid>
         <StackPanel Grid.Row="1" >
             <TextBlock TextWrapping="Wrap "
-                        Width="206"
+                        Width="286"
                         Text="{Binding ErrorMsg}"
                         Foreground="Red"
                         FontSize="12"

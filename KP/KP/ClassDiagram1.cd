@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KP.CustomControls.BindablePasswordBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAABACAAAAAAAAAAA=</HashCode>
+      <FileName>CustomControls\BindablePasswordBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.db.context.DbAppContext" Collapsed="true">
+    <Position X="32.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAQAAAAAQAgAAAAAAAAAAAAAEAAAQAAAQAAA=</HashCode>
+      <FileName>db\context\DbAppContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.dbClasses.BigItemInfo" Collapsed="true">
+    <Position X="36.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAABAEwgkAAAKIAAAAAAAIAAAAAAAABAAAQAwA=</HashCode>
+      <FileName>db\dbClasses\BigItemInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.dbClasses.FramesFromMovie" Collapsed="true">
+    <Position X="36.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAACAAgAE=</HashCode>
+      <FileName>db\dbClasses\FramesFromMovie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.dbClasses.MiniItemInfo" Collapsed="true">
+    <Position X="32.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAAAQAIAAAQAAAAAAAAAAAAAACAAgAA=</HashCode>
+      <FileName>db\dbClasses\MiniItemInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.dbClasses.Review" Collapsed="true">
+    <Position X="38" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAABAQAACAAAAAAAAAVAACQAAAAAAA=</HashCode>
+      <FileName>db\dbClasses\Review.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.dbClasses.UserProfile" Collapsed="true">
+    <Position X="34.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACBAgAAAAAQAAAAAAAIAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>db\dbClasses\UserProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.db.dbClasses.Likes" Collapsed="true">
+    <Position X="32.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAACAAAACAAAAAACAAAAACAAAAAAQA=</HashCode>
+      <FileName>db\dbClasses\Likes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.db.dbClasses.WatchLater" Collapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAACAAAACAAAAAACAAAAACAAAAAAQA=</HashCode>
+      <FileName>db\dbClasses\WatchLater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.DBMethods.HashPasswordMD5.HashMD5" Collapsed="true">
+    <Position X="39.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>DBMethods\HashPasswordMD5\HashMD5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.DBMethods.Repositories.BigItemInfoRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAACAQAAAAAACABAEAAAABAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\BigItemInfoRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.DBMethods.Repositories.FramesFromMovieRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAACAQAAAAAACABAEAAAABAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\FramesFromMovieRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.DBMethods.Repositories.LikesRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAACAQAAAAAACABAEAAAABAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\LikesRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.DBMethods.Repositories.MiniItemInfoRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAACAQAAAAAACABAEAAACBAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\MiniItemInfoRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.DBMethods.Repositories.ReviewRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAACAQAAAAAACABAEAAAABAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\ReviewRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.DBMethods.Repositories.WatchLaterRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAACAQAAAAAACABAEAAAABAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\WatchLaterRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.DBMethods.Repositories.UserProfileRepositor.UserProfileRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAACAQAAAAAACABAEAAAABAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\UserProfileRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.DBMethods.UnitOfWork.UnitOfWork" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAKAATCAQEAAAAQACAAEAAAABAAAAAAAAAEAIAgg=</HashCode>
+      <FileName>DBMethods\UnitOfWork\UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.login.login" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAQAAA=</HashCode>
+      <FileName>View\login\login.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAA=</HashCode>
+      <FileName>View\Main\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.App" Collapsed="true">
+    <Position X="34.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.View.Registration.Registration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAQAAA=</HashCode>
+      <FileName>View\Registration\RegistrationView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.AddView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AddView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.AllFilmsView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AllFilmsView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.CatalogView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>View\CatalogView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.FilmsView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>View\FilmsView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.HomeView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>View\HomeView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.LikesView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>View\LikesView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.MainWindowUser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAA=</HashCode>
+      <FileName>View\MainWindowUser.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.SettingView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SettingView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.UserProfileView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserProfileView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.View.WatchLaterView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>View\WatchLaterView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.ViewModel.BaseModels.ViewModelBase" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\BaseModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KP.ViewModel.BaseModels.ViewModelCommandBase" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>ViewModel\BaseModels\ViewModelCommandBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="KP.ViewModel.LoginViewModel.LoginViewModel">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAghgAgAAAAQQAABAAEgAAAAAACAgIAAACAAAA=</HashCode>
+      <FileName>ViewModel\LoginViewModel\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.Registration.RegistrationViewModel">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAIBAQgAAAAQYAAAAAEgAAAAAQCAgIAAAAQAEE=</HashCode>
+      <FileName>ViewModel\Registration\RegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.AddViewModel">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQDABAAAAoogAAkBEIQABDAIAIASZcBAARAAUgCAA0=</HashCode>
+      <FileName>ViewModel\AddViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.AllFilmsViewModel">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAAAAAAAAwiAABAABAAACAABAAAAAEAAAAAEAIAAA=</HashCode>
+      <FileName>ViewModel\AllFilmsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.CatalogViewModel">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BxAbKALEFoAymEAEAEIbAbJUCAIISkcAygBjISkmO0E=</HashCode>
+      <FileName>ViewModel\CatalogViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.FilmsViewModel">
+    <Position X="24" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BxAbKACEFoAymECEAEITA7JQCAIICEeASgFzISkGewE=</HashCode>
+      <FileName>ViewModel\FilmsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.HomeViewModel">
+    <Position X="28.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BxAbKAiEFoBymEAEAEITAbJQCAIICMcASgBzISkGOwE=</HashCode>
+      <FileName>ViewModel\HomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.LikesViewModel">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQATCAiEFoBwmEAEAEIQADJQAAIASAcAAgByISgGMwE=</HashCode>
+      <FileName>ViewModel\LikesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.MainWindowUserViewModel">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEFAgAAAgABAEAAAAhAUAAhsAEDgAAQIAAUEAAAA=</HashCode>
+      <FileName>ViewModel\MainWindowUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.ManePageViewModel">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAkFAgAAAgARAEAAAAhAUAAhsAEDgQAQIAAUEAAAA=</HashCode>
+      <FileName>ViewModel\ManePageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.SettingViewModel">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>ViewModel\SettingViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.UserProfileViewModel">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAARgAABAIIAAAAgAAAABIgCACQIACEoBBCA=</HashCode>
+      <FileName>ViewModel\UserProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KP.ViewModel.WatchLaterViewModel">
+    <Position X="26.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQATCACEFoAwmEAEQEIQADJQAAIACAcAAgByISgGMwE=</HashCode>
+      <FileName>ViewModel\WatchLaterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="KP.DBMethods.Repositories.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="31" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACIAAAAAAAAAAAACABAAAAAAAAAACAgAAAAAAAIA=</HashCode>
+      <FileName>DBMethods\Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

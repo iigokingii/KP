@@ -26,21 +26,8 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center" Text="{DynamicResource Theme}" Style="{DynamicResource StUN}"/>
-        <StackPanel Width="120" Orientation="Horizontal">
-            <Button Style="{DynamicResource LangBut}"
-                    
-                    BorderBrush="Gray"
-                    BorderThickness="3">
-                <Button.Background>
-                    <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\icons\Theme.png"/>
-                </Button.Background>
-            </Button>
-            <Button Style="{DynamicResource LangBut}">
-                <Button.Background>
-                    <ImageBrush ImageSource="D:\2k2s\KP\KP\KP\images\langs\EN.png"/>
-                </Button.Background>
-            </Button>
+        <StackPanel Width="150" Background="red">
+            
         </StackPanel>
     </StackPanel>
 </UserControl>

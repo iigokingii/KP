@@ -22,30 +22,29 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource CategoryStyle}" Text="{DynamicResource CategoryNew}"/>
-                    <ScrollViewer  x:Name="scrollViewer1" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Disabled">
+                    <StackPanel>
                         <ListBox  BorderThickness="0" ItemsSource="{Binding NewCategory}"
                                   Visibility="{Binding IsVisible}"
                                   ItemTemplate="{StaticResource ListBoxItemTemplate}"
                                   PreviewMouseWheel="ListBox_PreviewMouseWheel"
-                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                                  Background="Transparent" ItemContainerStyle="{StaticResource PosterContainer}">
+                                  Background="Transparent" ItemContainerStyle="{StaticResource PosterContainer}"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
                             <ListBox.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
                         </ListBox>
-                    </ScrollViewer>
+                    </StackPanel>
 
                 </StackPanel>
                 <StackPanel Grid.Row="1" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource CategoryStyle}" Text="{DynamicResource CategoryPopular}"/>
-                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+                    <StackPanel>
                         <ListBox  BorderThickness="0" ItemsSource="{Binding PopularCategory}"
                                   Visibility="{Binding IsVisible}"
                                   PreviewMouseWheel="ListBox_PreviewMouseWheel"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                                   Background="Transparent"
                                   ItemTemplate="{StaticResource ListBoxItemTemplate}"
                                   ItemContainerStyle="{StaticResource PosterContainer}">
@@ -55,16 +54,15 @@
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
                         </ListBox>
-                    </ScrollViewer>
+                    </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Margin="0 0 20 0">
                     <TextBlock Style="{DynamicResource CategoryStyle}" Text="{DynamicResource CategoryGoKin}"/>
-                    <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden">
+                    <StackPanel>
                         <ListBox  BorderThickness="0" ItemsSource="{Binding GokinCategory}"
                                   Visibility="{Binding IsVisible}"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                                   PreviewMouseWheel="ListBox_PreviewMouseWheel"
-                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
                                   Background="Transparent"
                                   ItemContainerStyle="{StaticResource PosterContainer}"
                                   ItemTemplate="{StaticResource ListBoxItemTemplate}">
@@ -74,7 +72,7 @@
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
                         </ListBox>
-                    </ScrollViewer>
+                    </StackPanel>
                 </StackPanel>
 
             </Grid>

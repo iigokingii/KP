@@ -36,7 +36,7 @@
     <v:String x:Key="movieNameOrig">Оригинальное название: </v:String>
     <v:String x:Key="movieBigPoster">Основной постер:</v:String>
     <v:String x:Key="movieGenre">Жанр: </v:String>
-    <v:String x:Key="movieYear">Год: </v:String>
+    <v:String x:Key="movieYear">Премьера в мире: </v:String>
     <v:String x:Key="movieCountry">Страна: </v:String>
     <v:String x:Key="movieDescription">Описание: </v:String>
     <v:String x:Key="movieRatingIMDb">Рейтинг IMDb: </v:String>
@@ -53,7 +53,7 @@
     <v:String x:Key="SortBy">Сортировка по:</v:String>
     <v:String x:Key="SortByGenre">Жанру</v:String>
     <v:String x:Key="SortByName">Имени</v:String>
-    <v:String x:Key="SortByYear">Году</v:String>
+    <v:String x:Key="SortByRating">Рейтингу</v:String>
     
     <v:String x:Key="SearchByIdDB">Введите ID фильма/сериала:</v:String>
     <v:String x:Key="ButtonUpdateDB">Изменить</v:String>
